@@ -347,3 +347,15 @@ nav {
 nav .hidden.md\\:flex {
     z-index: 50;
 }
+
+/* Update the logo/brand link styling */
+nav .max-w-7xl .flex .text-gray-400 {
+    position: relative;
+    z-index: 60; /* Higher than most other elements */
+}
+
+/* Or more specifically target it */
+nav a[href="index.html"] {
+    position: relative;
+    z-index: 60;
+}
