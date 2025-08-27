@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Offers | David Chang</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DGSDM1BZFF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DGSDM1BZFF');
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Link to shared styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body class="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <!-- Fine Grid Background -->
+    <div class="fixed inset-0 opacity-[0.02] pointer-events-none grid-bg-subtle"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-black/60 backdrop-blur-xl border-b border-white/10">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <a 
+                href="/index.html" 
+                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 cursor-pointer text-[16px] hover-scale"
+            >
+                David C • <span class="text-lime-400">Product Designer</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8 text-sm">
+                <a 
+                    href="/index.html#about" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="/index.html#latest-work" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="/index.html#contact" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    CONTACT
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button 
+                id="mobileMenuBtn"
+                class="md:hidden flex items-center justify-center w-10 h-10 text-gray-400 hover:text-lime-400 transition-colors duration-300"
+                onclick="toggleMobileMenu()"
+            >
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div 
+            id="mobileMenu" 
+            class="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 transform translate-y-[-100%] opacity-0 invisible transition-all duration-300 ease-out"
+        >
+            <div class="px-8 py-6 space-y-4">
+                <a 
+                    href="/index.html#about" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="/index.html#latest-work" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="/index.html#contact" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    CONTACT
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative py-20 px-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back Button -->
+                <div class="mb-8">
+                    <a 
+                        href="/index.html#latest-work" 
+                        class="inline-flex items-center gap-2 text-gray-400 hover:text-[#c4ff00] transition-colors duration-300"
+                    >
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span class="text-sm">Back to Work</span>
+                    </a>
+                </div>
+
+                <!-- Project Header -->
+                <div class="animate-on-scroll">
+                    <div class="mb-6">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-jakarta mb-4" style="font-weight: 600; letter-spacing: -0.025em; line-height: 1.1;">
+                            NFT Marketplace Offers
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl" style="font-weight: 400;">
+                            Bridging the pricing gap between buyers and sellers to unlock marketplace potential and drive transaction volume growth.
+                        </p>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="grid md:grid-cols-4 gap-8 mb-12">
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">ROLE</div>
+                            <div class="text-white font-inter">Lead Product Designer</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">TEAM</div>
+                            <div class="text-white font-inter">CFO, PM, Engineers, QA</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">TIMELINE</div>
+                            <div class="text-white font-inter">2 Months</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">IMPACT</div>
+                            <div class="text-[#c4ff00] font-inter" style="font-weight: 600;">+50% Transaction Volume</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Placeholder -->
+                <div class="animate-on-scroll delay-200 mb-8">
+                    <div class="relative aspect-video bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
+                        <img 
+                            src="/image/01_offer/hero.png" 
+                            alt="Hero section"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="relative py-20 px-8 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        The Problem
+                    </h2>
+                </div>
+
+                <!-- Problem Content -->
+                <div class="space-y-12">
+                    <!-- The Challenge -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Challenge
+                        </h3>
+                        <div class="text-gray-300 leading-relaxed font-inter space-y-4" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            <p>
+                                Our NFT marketplace had a fundamental pricing disconnect. While we had plenty of listings, most were priced too high to sell. Sellers, especially newcomers, lacked market insight to price competitively.
+                            </p>
+                            <p>
+                                Floor prices only showes the lowest listed price not what actually sold. This led to stagnant inventory and frustrated users on both sides.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Visual Placeholder -->
+                    <div class="my-12">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img 
+                                src="/image/01_offer/visual1.png" 
+                                alt="Problem illustration showing Listed NFTs vs Market Demand vs No Sales result"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Key Behavioral Insights -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Key Behavioral Insights
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            We observed several patterns through user behavior analysis:
+                        </p>
+                        
+                        <!-- Insights Grid -->
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="trending-up" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">High Listing Volume</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Lots of NFTs listed but only few sells
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="help-circle" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Seller Confusion</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    New sellers lack understanding of good pricing
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="x-circle" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Failed Auctions</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Good bid activity existed but rarely met minimum thresholds
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Problem Context -->
+                    <div>
+                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
+                            <div class="flex items-start gap-4">
+                                <div class="p-2 bg-red-500/10 rounded-lg">
+                                    <i data-lucide="alert-triangle" class="w-6 h-6 text-red-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Transaction History Evidence</h4>
+                                    <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                        Clear evidence that sales happened when prices aligned with market demand, but the disconnect between listing prices and actual market value was creating a stagnant marketplace.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Discovery Section -->
+        <section class="relative py-20 px-8 bg-gray-950/30 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Research & Discovery
+                    </h2>
+                </div>
+
+                <!-- Research Content -->
+                <div class="space-y-12">
+                    <!-- Understanding the Market -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Understanding the Market
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            With a tight timeline, we focused on competitive analysis and behavioral data. I studied how leading platforms like OpenSea, Magic Eden, and OKX handled price discovery.
+                        </p>
+
+                        <!-- Competitive Analysis Visual Placeholder -->
+                        <div class="my-12">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img 
+                                    src="/image/01_offer/visual2.png" 
+                                    alt="Competitive analysis grid"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Journey -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            User Journey: Finding the Right Price
+                        </h3>
+                        
+                        <!-- Journey Flow Visual Placeholder -->
+                        <div class="my-12">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img 
+                                    src="/image/01_offer/visual3.png" 
+                                    alt="Step-by-step journey flow diagram"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Key Insight Callout -->
+                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
+                            <div class="flex items-start gap-4">
+                                <div class="p-2 bg-[#c4ff00]/10 rounded-lg">
+                                    <i data-lucide="lightbulb" class="w-6 h-6 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Key Insight</h4>
+                                    <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                        Sellers need market feedback to price competitively, and offers provide real-time demand.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Design Section -->
+        <section class="relative py-20 px-8 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Solution Design
+                    </h2>
+                </div>
+
+                <!-- Solution Content -->
+                <div class="space-y-12">
+                    <!-- The Solution -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Solution
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            We introduced a comprehensive offers system that would bridge the pricing gap between buyers and sellers, providing market signals and enabling price discovery.
+                        </p>
+
+                        <!-- Solution Interface Visual Placeholder -->
+                        <div class="my-12">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img 
+                                    src="/image/01_offer/visual4.png" 
+                                    alt="Interface of NFT detail with Offers"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- offer dashboard -->
+                        <div class="my-12">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img 
+                                    src="/image/01_offer/visual5.png" 
+                                    alt="Offer manager dashboard"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- notification settings -->
+                        <div class="my-12">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img 
+                                    src="/image/01_offer/visual6.png" 
+                                    alt="Offer notification settings"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Features -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Core Features
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="eye" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Visible Market Intent</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    All offers displayed prominently on NFT pages
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="clock" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Time-bound Offers</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Expiration dates create urgency and clarity
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="bell" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Smart Notifications</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Alerts for new offers, expirations, and acceptance
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">One-click Acceptance</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Streamlined flow for sellers to accept offers
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Considerations -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Technical Considerations
+                        </h3>
+                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
+                            <div class="mb-6">
+                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Blockchain Constraint</h4>
+                                <p class="text-gray-300 font-inter leading-relaxed mb-4" style="font-weight: 400;">
+                                    Enjin’s network requires buyers to manually reclaim unaccepted offers, as funds don’t automatically return to their wallets. We planned an improvement for this after release.
+                                </p>
+                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">UX Solution</h4>
+                                <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                    Implemented Claim CTA to remind users of reclaimable offers in Offers & Bid dashboard.
+                                </p>
+                            </div>
+
+                            <!-- Notification mockup placeholder -->
+                            <div>
+                                <div class="relative aspect-[16/5] overflow-hidden">
+                                    <img 
+                                        src="/image/01_offer/visual7.png" 
+                                        alt="Re claim placed offers"
+                                        class="w-full h-full object-contain"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- Impact & Results Section -->
+        <section class="relative py-20 px-8 bg-gray-950/30 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Impact & Results
+                    </h2>
+                </div>
+
+                <!-- Results Content -->
+                <div class="space-y-12">
+                    <!-- The Results -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Results
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            The results exceeded our expectations. While we anticipated increased offer activity, the broader impact on marketplace dynamics was remarkable.
+                        </p>
+
+                        <!-- Key Metrics -->
+                        <div class="mb-12">
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="text-center p-8 bg-gray-900/50 border border-gray-800 rounded-lg">
+                                    <div class="text-5xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">18.2%</div>
+                                    <div class="text-white font-inter mb-2" style="font-weight: 600;">Offer-to-Sale Conversion Rate</div>
+                                    <div class="text-gray-400 text-sm font-inter">Successful offer acceptance rate</div>
+                                </div>
+                                <div class="text-center p-8 bg-gray-900/50 border border-gray-800 rounded-lg">
+                                    <div class="text-5xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">50%</div>
+                                    <div class="text-white font-inter mb-2" style="font-weight: 600;">Overall Transaction Volume Increase</div>
+                                    <div class="text-gray-400 text-sm font-inter">Marketplace-wide improvement</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Visual Placeholder -->
+                        <!--
+                        <div class="relative aspect-[16/10] bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i data-lucide="trending-up" class="w-16 h-16 text-gray-600 mx-auto mb-4"></i>
+                                    <p class="text-gray-500 font-inter">Visual Placeholder</p>
+                                    <p class="text-gray-600 text-sm font-inter">Results visualization showing transaction volume increase</p>
+                                    <p class="text-gray-600 text-sm font-inter">Before/after comparison of marketplace activity</p>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+
+
+                    <!-- The Unexpected Win -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Unexpected Win
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Beyond offer acceptance, the feature improved overall price discovery, leading to better listing prices and increased buyer confidence across the entire marketplace.
+                        </p>
+                    </div>
+
+                    <!-- Key Learnings -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Key Learnings
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-green-500/10 rounded-lg">
+                                        <i data-lucide="network" class="w-5 h-5 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Network Effects</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Increased activity from offers created positive momentum, encouraging more listings and buyer engagement.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-purple-500/10 rounded-lg">
+                                        <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Educating Sellers</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            The offers not only enabled negotiations but also educated the entire sellers about realistic pricing.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Navigation -->
+        <section class="relative py-16 px-8 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between gap-8">
+                    <!-- Previous Case Study -->
+                    <div class="flex-1">
+                        <div class="text-gray-400 text-sm font-inter mb-2 tracking-wider">
+                            PREVIOUS
+                        </div>
+                        <h3 class="text-white font-inter text-lg mb-4" style="font-weight: 600;">
+                            Beam Dashboard
+                        </h3>
+                        <button 
+                            onclick="window.location.href='/beam-dashboard/index.html'"
+                            class="rounded-full text-sm px-6 py-2 relative z-10 transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;"
+                        >
+                            See case study
+                        </button>
+                    </div>
+
+                    <!-- Next Case Study -->
+                    <div class="flex-1 text-left md:text-right">
+                        <div class="text-gray-400 text-sm font-inter mb-2 tracking-wider">
+                            NEXT
+                        </div>
+                        <h3 class="text-white font-inter text-lg mb-4" style="font-weight: 600;">
+                            Reducing Friction with Quick Actions
+                        </h3>
+                        <button 
+                            onclick="window.location.href='/quick-actions/index.html'"
+                            class="rounded-full text-sm px-6 py-2 relative z-10 transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;"
+                        >
+                            See case study
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animate-on-scroll elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(el => observer.observe(el));
+        });
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            if (menu.classList.contains('mobile-menu-open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+
+        function openMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            menu.classList.add('mobile-menu-open');
+            menu.style.transform = 'translateY(0)';
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            
+            // Change icon to X
+            icon.setAttribute('data-lucide', 'x');
+            lucide.createIcons();
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            menu.classList.remove('mobile-menu-open');
+            menu.style.transform = 'translateY(-100%)';
+            menu.style.opacity = '0';
+            menu.style.visibility = 'invisible';
+            
+            // Change icon back to menu
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            
+            if (menu && menu.classList.contains('mobile-menu-open')) {
+                if (!menu.contains(event.target) && !btn.contains(event.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
