@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Chang - Product Designer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    
+    <!-- Link to shared styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body class="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <!-- Fine Grid Background -->
+    <div class="fixed inset-0 opacity-[0.02] pointer-events-none grid-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-black/60 backdrop-blur-xl border-b border-white/10">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <a 
+                href="index.html" 
+                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 cursor-pointer text-[16px] hover-scale"
+            >
+                David C • <span class="text-lime-400">Product Designer</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8 text-sm">
+                <a 
+                    href="index.html#about" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="index.html#latest-work" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="index.html#contact" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    CONTACT
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button 
+                id="mobileMenuBtn"
+                class="md:hidden flex items-center justify-center w-10 h-10 text-gray-400 hover:text-lime-400 transition-colors duration-300"
+                onclick="toggleMobileMenu(event)"
+            >
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div 
+            id="mobileMenu" 
+            class="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 transform translate-y-[-100%] opacity-0 invisible transition-all duration-300 ease-out"
+        >
+            <div class="px-8 py-6 space-y-4">
+                <a 
+                    href="index.html#about" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="index.html#latest-work" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="index.html#contact" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    CONTACT
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center px-8 py-20">
+            <!-- Background -->
+            <div class="absolute inset-0 bg-black"></div>
+            
+            <!-- Subtle geometric background pattern -->
+            <div class="absolute inset-0 opacity-[0.015]">
+                <div class="w-full h-full" style="background-image: radial-gradient(circle at 25% 25%, rgba(196, 255, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 255, 0, 0.05) 0%, transparent 50%);"></div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="relative z-10 text-center max-w-5xl mx-auto">
+                <!-- Main Headline -->
+                <div class="mb-8">
+                    <div class="animate-fade-in-up">
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-jakarta" style="font-weight: 500; letter-spacing: -0.025em; line-height: 1.1;">
+                            <span class="text-white">Designing with</span><br>
+                            <span class="relative inline-block font-jakarta" style="font-weight: 500; font-style: italic;">
+                                <span class="text-[#c4ff00] text-shine" style="display: inline-block; padding: 0 .3em 0 .3em;">SIMPLICITY</span>
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Subtitle -->
+                <div class="animate-fade-in-up delay-200 mb-8">
+                    <p class="text-xl md:text-2xl text-gray-300 font-inter" style="font-weight: 500;">
+                        Lead Product Designer @ 
+                        <span class="text-[#c4ff00] font-jakarta hover:text-white transition-colors duration-150 cursor-pointer" style="font-weight: 600;">
+                            Enjin
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Badges -->
+                <div class="animate-fade-in-up delay-600 flex flex-wrap justify-center gap-4">
+                    <!-- Los Angeles Badge -->
+                    <div class="flex items-center gap-2 px-4 py-2 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-full cursor-default hover-lift">
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#c4ff00]"></i>
+                        <span class="text-sm text-gray-300 font-inter" style="font-weight: 500;">Los Angeles</span>
+                    </div>
+
+                    <!-- Full-Stack Design Badge -->
+                    <div class="flex items-center gap-2 px-4 py-2 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-full cursor-default hover-lift">
+                        <i data-lucide="layers" class="w-3.5 h-3.5 text-[#c4ff00]"></i>
+                        <span class="text-sm text-gray-300 font-inter" style="font-weight: 500;">Full-Stack Design</span>
+                    </div>
+
+                    <!-- Experience Badge -->
+                    <div class="flex items-center gap-2 px-4 py-2 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-full cursor-default hover-lift">
+                        <i data-lucide="clock" class="w-3.5 h-3.5 text-[#c4ff00]"></i>
+                        <span class="text-sm text-gray-300 font-inter" style="font-weight: 500;">8+ Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corner accents -->
+            <div class="absolute top-12 left-12 w-16 h-16 opacity-20">
+                <div class="w-full h-full border-l border-t border-[#c4ff00]/10"></div>
+            </div>
+            <div class="absolute bottom-12 right-12 w-16 h-16 opacity-20">
+                <div class="w-full h-full border-r border-b border-[#c4ff00]/10"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="relative py-20 px-8 animate-on-scroll">
+            <!-- Particles -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 80%; top: 30%; animation-delay: 2s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 60%; top: 70%; animation-delay: 4s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 30%; top: 80%; animation-delay: 6s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 90%; top: 10%; animation-delay: 8s;"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="text-gray-400 text-sm tracking-wider mb-8 font-jakarta" style="font-weight: 500;">
+                        ABOUT
+                    </h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Profile Image -->
+                   <div class="relative animate-fade-in-left delay-200 lg:max-w-none max-w-md mx-auto">
+                       <div class="relative overflow-hidden rounded-lg border border-gray-800 bg-black/50">
+                            <!-- Animated background glow -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-[#c4ff00]/10 via-transparent to-[#c4ff00]/5 animate-glow"></div>
+                            
+                            <div class="relative z-10 p-4">
+                                <div class="aspect-[4/5] overflow-hidden rounded-md">
+                                    <img 
+                                        src="image/Profile.jpg"
+                                        alt="David Chang - Product Designer"
+                                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                    />
+                                </div>
+                            </div>
+                            
+                            <!-- Corner accents -->
+                            <div class="absolute top-6 left-6 w-8 h-8 border-l border-t border-[#c4ff00]/30"></div>
+                            <div class="absolute bottom-6 right-6 w-8 h-8 border-r border-b border-[#c4ff00]/30"></div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="space-y-12 animate-fade-in-right delay-400 lg:max-w-none max-w-[600px] mx-auto">
+                        <!-- Main Text Block -->
+                        <div>
+                            <div class="mb-8">
+                                <p class="mb-0 text-white leading-relaxed font-inter" style="font-weight: 200; font-size: 24px; line-height: 1.3;">
+                                    Hi, I am <span class="text-[#c4ff00] font-medium">David</span>, a <span class="text-[#c4ff00] font-medium">Product Designer</span> who believes the best experiences feel <span class="text-[#c4ff00] font-medium">Natural</span> from the first click. I've spent years making complex systems feel as <span class="text-[#c4ff00] font-medium">Simple</span> as ordering coffee ☕ <br><br> Have a messy problem that needs <span class="text-[#c4ff00] font-medium">Clarity</span>? <br>I'm here to help! 👌
+
+                                </p>
+                            </div>
+
+                            <!-- PS Section -->
+                            <div>
+                                <p class="text-gray-400 font-inter" style="font-weight: 400; font-size: 20px; line-height: 1.5;">
+                                    PS: Outside of work, you'll find me collecting board games 🎲, watching classic movies 🍿, or coding my own games 🖥️.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="grid grid-cols-2 gap-8 pt-8 border-t border-gray-800">
+                            <div class="text-center">
+                                <div class="text-3xl text-[#c4ff00] mb-2 font-jakarta" style="font-weight: 600;">
+                                    8+
+                                </div>
+                                <div class="text-gray-400 text-sm font-inter" style="font-weight: 400;">
+                                    Years Experience
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl text-[#c4ff00] mb-2 font-jakarta" style="font-weight: 600;">
+                                    2M+
+                                </div>
+                                <div class="text-gray-400 text-sm font-inter" style="font-weight: 400;">
+                                    Users Impacted
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="relative py-32 px-8 bg-gray-950/30 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <div>
+                    <h2 class="text-sm text-gray-400 mb-8 tracking-wider text-center font-jakarta" style="font-weight: 500;">
+                        WORK EXPERIENCE
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start py-6 border-b border-gray-800 animate-fade-in-up delay-100">
+                            <div>
+                                <h3 class="text-xl font-medium">Lead Product Designer</h3>
+                                <p class="text-gray-400 text-lg">Enjin</p>
+                            </div>
+                            <span class="text-gray-500">2021 - Present</span>
+                        </div>
+                        <div class="flex justify-between items-start py-6 border-b border-gray-800 animate-fade-in-up delay-200">
+                            <div>
+                                <h3 class="text-xl font-medium">Designer</h3>
+                                <p class="text-gray-400 text-lg">Pi Distribution Inc.</p>
+                            </div>
+                            <span class="text-gray-500">2016 - 2020</span>
+                        </div>
+                        <div class="flex justify-between items-start py-6 animate-fade-in-up delay-300">
+                            <div>
+                                <h3 class="text-xl font-medium">Post Production GFX Designer</h3>
+                                <p class="text-gray-400 text-lg">Seoul Vision</p>
+                            </div>
+                            <span class="text-gray-500">2015</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Work Section -->
+        <section id="latest-work" class="relative py-20 px-8 animate-on-scroll">
+            <!-- Section Particles -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 15%; top: 25%; animation-delay: 1s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 85%; top: 35%; animation-delay: 3s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 70%; top: 75%; animation-delay: 5s;"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="text-gray-400 text-sm tracking-wider mb-8 font-jakarta" style="font-weight: 500;">
+                        PROJECTS
+                    </h2>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- NFT Marketplace Project -->
+                    <div class="project-card relative border border-gray-800 rounded-lg bg-black/50 overflow-hidden group cursor-pointer grid-bg-subtle"
+                    onclick="window.location.href='offer.html'">
+
+                        <!-- Animated Background Glow -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#c4ff00]/5 via-transparent to-[#c4ff00]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                        <div class="p-8 min-h-[400px] flex flex-col relative z-10">
+                            <!-- Project Header -->
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="project-title text-white text-xl font-medium mb-2 transition-colors duration-300">
+                                        NFT MARKETPLACE OFFERS
+                                    </h3>
+                                    <p class="text-sm text-gray-400 leading-relaxed">
+                                        How might we help buyers and sellers find fair prices?
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Device Mockup -->
+                            <div class="flex-1 flex items-center justify-center relative">
+                                <div class="relative w-full max-w-lg group-hover:scale-105 transition-transform duration-500">
+                                    <div class="w-full h-full flex items-center justify-center relative bg-black rounded-lg p-6">
+                                        <!-- Default State -->
+                                        <div class="text-center group-hover:opacity-0 group-hover:-translate-y-4 transition-all duration-400">
+                                            <!-- Notification Badge -->
+                                            <div class="inline-flex items-center gap-4 px-8 py-4 bg-gray-800/50 border border-gray-600 rounded-full mb-6">
+                                                <div class="w-4 h-4 bg-[#c4ff00] rounded-full animate-pulse-dot"></div>
+                                                <span class="text-white text-2xl">New offers!</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Hover State -->
+                                        <div class="absolute inset-0 flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 delay-100">
+                                            <div class="text-center max-w-md">
+                                                <div class="mb-8">
+                                                    <div class="text-gray-400 text-lg mb-4">Offer Received</div>
+                                                    <div class="text-white text-5xl mb-3 font-jakarta group-hover:text-[#c4ff00] transition-colors duration-300" style="font-weight: 500;">
+                                                        0.38 ENJ
+                                                    </div>
+                                                    <div class="text-gray-500 text-lg">from @collector_x</div>
+                                                </div>
+
+                                                <!-- Action Buttons -->
+                                                <div class="flex items-center gap-6 justify-center">
+                                                    <div class="px-8 py-4 bg-green-500/20 border border-green-500/30 rounded-full text-lg text-green-400 font-jakarta" style="font-weight: 500;">
+                                                        Accept offer
+                                                    </div>
+                                                    <div class="px-8 py-4 bg-[#c4ff00]/10 border border-[#c4ff00]/30 rounded-full text-lg text-[#c4ff00] cursor-pointer font-jakarta" style="font-weight: 500;">
+                                                        Counter
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Show Case Study Button -->
+                            <div class="absolute bottom-8 right-8">
+                                <div class="show-case-study relative rounded-full transition-all duration-300">
+                                    <div class="rounded-full text-sm px-6 py-2 relative z-10 pointer-events-none transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;">
+                                        show case study
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Project -->
+                    <div class="project-card relative border border-gray-800 rounded-lg bg-black/50 overflow-hidden group cursor-pointer grid-bg-subtle"
+                    onclick="window.location.href='quick-actions.html'">
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#c4ff00]/5 via-transparent to-[#c4ff00]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                        <div class="p-8 min-h-[400px] flex flex-col relative z-10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="project-title text-white text-xl font-medium mb-2 transition-colors duration-300">
+                                        REDUCING FRICTION WITH QUICK ACTIONS
+                                    </h3>
+                                    <p class="text-sm text-gray-400 leading-relaxed">
+                                        How might we simplify complex crypto transactions?
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex-1 flex items-center justify-center relative">
+                                <div class="relative group-hover:scale-105 transition-transform duration-500">
+                                    <div class="flex flex-col items-center justify-center py-8">
+                                        <!-- Balance -->
+                                        <div class="text-center mb-12">
+                                            <div class="text-white text-4xl mb-2 font-jakarta group-hover:text-[#c4ff00] transition-colors duration-300" style="font-weight: 500;">
+                                                $9,400.12
+                                            </div>
+                                            <div class="text-gray-400 text-base">USD</div>
+                                        </div>
+
+                                        <!-- Quick Actions -->
+                                        <div class="flex justify-center gap-6">
+                                            <div class="w-16 h-16 bg-gray-700 rounded-xl border border-gray-600 flex items-center justify-center group-hover:bg-[#c4ff00]/10 group-hover:border-[#c4ff00]/50 transition-all duration-400">
+                                                <div class="text-gray-400 text-xl group-hover:text-[#c4ff00] transition-colors duration-400">↑</div>
+                                            </div>
+                                            <div class="w-16 h-16 bg-gray-700 rounded-xl border border-gray-600 flex items-center justify-center group-hover:bg-[#c4ff00]/10 group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-100">
+                                                <div class="text-gray-400 text-xl group-hover:text-[#c4ff00] transition-colors duration-400">↓</div>
+                                            </div>
+                                            <div class="w-16 h-16 bg-gray-700 rounded-xl border border-gray-600 flex items-center justify-center group-hover:bg-[#c4ff00]/10 group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-200">
+                                                <div class="text-gray-400 text-xl group-hover:text-[#c4ff00] transition-colors duration-400">⍜</div>
+                                            </div>
+                                            <div class="w-16 h-16 bg-gray-700 rounded-xl border border-gray-600 flex items-center justify-center group-hover:bg-[#c4ff00]/10 group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-300">
+                                                <div class="text-gray-400 text-lg group-hover:text-[#c4ff00] transition-colors duration-400">✦</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="absolute bottom-8 right-8">
+                                <div class="show-case-study relative rounded-full transition-all duration-300">
+                                    <button class="rounded-full text-sm px-6 py-2 relative z-10 pointer-events-none transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;">
+                                        show case study
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NFT Beam Project -->
+                    <div class="project-card relative border border-gray-800 rounded-lg bg-black/50 overflow-hidden group cursor-pointer grid-bg-subtle"
+                    onclick="window.location.href='beam-dashboard.html'">
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#c4ff00]/5 via-transparent to-[#c4ff00]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                        <div class="p-8 min-h-[400px] flex flex-col relative z-10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="project-title text-white text-xl font-medium mb-2 transition-colors duration-300">
+                                        BEAM DASHBOARD
+                                    </h3>
+                                    <p class="text-sm text-gray-400 leading-relaxed">
+                                        How might we simplify complex crypto transactions?
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex-1 flex items-center justify-center relative">
+                                <div class="relative w-full max-w-md group-hover:scale-105 transition-transform duration-500">
+                                    <div class="flex items-center justify-center h-full">
+                                        <div class="w-40 h-40 bg-gray-800 rounded-lg relative overflow-hidden group-hover:bg-[#c4ff00]/5 transition-colors duration-300">
+                                            <!-- QR Code Pattern -->
+                                            <div class="absolute inset-4 grid grid-cols-8 grid-rows-8 gap-1">
+                                                <!-- Row 1 (top row - longest delay) -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[280ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[280ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[280ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[280ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[280ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                
+                                                <!-- Row 2 -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[240ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[240ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[240ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[240ms]"></div>
+                                                
+                                                <!-- Row 3 -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[200ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[200ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[200ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[200ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                
+                                                <!-- Row 4 -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[160ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[160ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[160ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[160ms]"></div>
+                                                
+                                                <!-- Row 5 -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[120ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[120ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[120ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[120ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[120ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                
+                                                <!-- Row 6 -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[80ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[80ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[80ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                
+                                                <!-- Row 7 -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[40ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[40ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[40ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[40ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[40ms]"></div>
+                                                
+                                                <!-- Row 8 (bottom row - shortest delay) -->
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[0ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[0ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 group-hover:bg-[#c4ff00] group-hover:border-[#c4ff00]/50 transition-all duration-400 delay-[0ms]"></div>
+                                                <div class="aspect-square bg-gray-700 rounded-[2px] border border-gray-600 opacity-30"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="absolute bottom-8 right-8">
+                                <div class="show-case-study relative rounded-full transition-all duration-300">
+                                    <button class="rounded-full text-sm px-6 py-2 relative z-10 pointer-events-none transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;">
+                                        show case study
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Passion Projects Section -->
+        <section id="passion-projects" class="relative py-20 px-8 animate-on-scroll">
+            <!-- Section Particles -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 20%; top: 30%; animation-delay: 2s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 75%; top: 20%; animation-delay: 4s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 85%; top: 80%; animation-delay: 6s;"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="text-gray-400 text-sm tracking-wider mb-4 font-jakarta" style="font-weight: 500;">
+                        PASSION PROJECTS
+                    </h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto">
+                        Games built from scratch using AI - from initial concept to full implementation.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Rock Scissor Paper Duel -->
+                    <div class="project-card relative border border-gray-800 rounded-lg bg-black/50 overflow-hidden group grid-bg-subtle">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#c4ff00]/5 via-transparent to-[#c4ff00]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                        <div class="p-8 relative z-10">
+                            <!-- Project Header -->
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="p-2 bg-gray-800 rounded-lg">
+                                    <i data-lucide="dices" class="w-5 h-5 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <h3 class="project-title text-white font-medium mb-1 transition-colors duration-300">
+                                        ROCK SCISSOR PAPER DUEL
+                                    </h3>
+                                    <div class="flex items-center gap-4 text-xs text-gray-400">
+                                        <span>Desktop</span>
+                                        <span>•</span>
+                                        <span class="text-yellow-400">Work in Progress</span>
+                                        <span>•</span>
+                                        <span>2025</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game Preview -->
+                            <div class="relative mb-6 aspect-video bg-gray-900 rounded-lg overflow-hidden video-container">
+                                <video 
+                                    class="w-full h-full object-cover" 
+                                    muted 
+                                    loop 
+                                    preload="metadata"
+                                 
+                                >
+                                    <source src="image/boosterPack.mov" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                
+                                <!-- Play Button Overlay (shows when paused) -->
+                                <div class="video-overlay absolute inset-0 bg-black/30 flex items-center justify-center transition-all duration-300 cursor-pointer">
+                                    <button class="w-16 h-16 bg-[#c4ff00] rounded-full flex items-center justify-center text-black hover-scale">
+                                        <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Hover Controls (shows when playing and hovering) -->
+                                <div class="video-hover-controls absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 transition-all duration-300 cursor-pointer">
+                                    <button class="w-16 h-16 bg-black/60 rounded-full flex items-center justify-center text-white hover-scale">
+                                        <i data-lucide="pause" class="w-6 h-6 fill-current"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Custom Progress Bar -->
+                                <div class="video-progress-container absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-all duration-300">
+                                    <div class="flex items-center gap-3 text-white text-sm">
+                                        <span class="current-time font-mono">0:00</span>
+                                        <div class="flex-1 relative">
+                                            <div class="video-progress-bg h-1 bg-white/30 rounded-full cursor-pointer">
+                                                <div class="video-progress-fill h-full bg-[#c4ff00] rounded-full transition-all duration-150" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                        <span class="total-time font-mono">0:00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                A gacha style card collection system where players can purchase booster packs to randomly unlock cards. Built from scratch with AI assistance.
+                            </p>
+
+                            <!-- Features -->
+                            <div>
+                                <h4 class="text-gray-400 text-xs tracking-wider mb-3">KEY FEATURES</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Deck Building</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Multiplayer</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Gacha Game</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Hunter -->
+                    <div class="project-card relative border border-gray-800 rounded-lg bg-black/50 overflow-hidden group grid-bg-subtle">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#c4ff00]/5 via-transparent to-[#c4ff00]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                        <div class="p-8 relative z-10">
+                            <!-- Project Header -->
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="p-2 bg-gray-800 rounded-lg">
+                                    <i data-lucide="key-round" class="w-5 h-5 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <h3 class="project-title text-white font-medium mb-1 transition-colors duration-300">
+                                        KEY HUNTER
+                                    </h3>
+                                    <div class="flex items-center gap-4 text-xs text-gray-400">
+                                        <span>Desktop & Mobile</span>
+                                        <span>•</span>
+                                        <span class="text-green-400">Live</span>
+                                        <span>•</span>
+                                        <span>2025</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game Preview -->
+                            <div class="relative mb-6 aspect-video bg-gray-900 rounded-lg overflow-hidden video-container">
+                                <video 
+                                    class="w-full h-full object-cover" 
+                                    muted 
+                                    loop 
+                                    preload="metadata"
+                                    
+                                >
+                                    <source src="image/keyHunter.mov" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                
+                                <!-- Play Button Overlay (shows when paused) -->
+                                <div class="video-overlay absolute inset-0 bg-black/30 flex items-center justify-center transition-all duration-300 cursor-pointer">
+                                    <button class="w-16 h-16 bg-[#c4ff00] rounded-full flex items-center justify-center text-black hover-scale">
+                                        <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Hover Controls (shows when playing and hovering) -->
+                                <div class="video-hover-controls absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 transition-all duration-300 cursor-pointer">
+                                    <button class="w-16 h-16 bg-black/60 rounded-full flex items-center justify-center text-white hover-scale">
+                                        <i data-lucide="pause" class="w-6 h-6 fill-current"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Custom Progress Bar -->
+                                <div class="video-progress-container absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-all duration-300">
+                                    <div class="flex items-center gap-3 text-white text-sm">
+                                        <span class="current-time font-mono">0:00</span>
+                                        <div class="flex-1 relative">
+                                            <div class="video-progress-bg h-1 bg-white/30 rounded-full cursor-pointer">
+                                                <div class="video-progress-fill h-full bg-[#c4ff00] rounded-full transition-all duration-150" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                        <span class="total-time font-mono">0:00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                A daily word puzzle game that challenges players to find the final word by submitting words. Inspired by Wordle & Minesweeper.
+                            </p>
+
+                            <!-- Features -->
+                            <div class="mb-6">
+                                <h4 class="text-gray-400 text-xs tracking-wider mb-3">KEY FEATURES</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Backend Server</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Encrypted Answers</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Responsive</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Cross Device Sync</span>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex gap-3">
+                                <div class="flex-1 relative rounded-lg hover-glow">
+                                    <button onclick="window.open('https://keyhunter.org', '_blank')" class="w-full bg-[#c4ff00] text-black hover:bg-[#b8f000] text-sm py-2 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 relative z-10">
+                                        <i data-lucide="play" class="w-4 h-4"></i>
+                                        Play Game
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graphic Design Section -->
+        <section id="graphic-design" class="relative py-20 px-8 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="text-gray-400 text-sm tracking-wider mb-8 font-jakarta">
+                        LOOK AND FEEL
+                    </h2>
+                </div>
+                
+                <!-- Carousel Container -->
+                <div class="overflow-hidden">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image1.png" alt="multiverse landing page" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image2.png" alt="games in ecosystem" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image3.png" alt="degen overview section" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                        
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image5.png" alt="dev platform hero graphic" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image6.png" alt="landing page hero graphic" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image7.jpg" alt="social media image 1" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image8.png" alt="social media image 2" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image9.jpg" alt="social media image 3" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aspect-[16/9] relative overflow-hidden rounded-lg border border-gray-800">
+                                    <img src="image/slides/image10.jpg" alt="social media image 4" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src, this.alt)">
+                                </div>
+                            </div>
+                            <!-- Add more slides as needed -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- pagination and buttons -->
+                <div class="flex items-center justify-between gap-4 mt-8">
+                    <button 
+                        id="customPrev"
+                        class="flex-shrink-0 w-12 h-12 bg-black/80 border border-gray-700 rounded-full flex items-center justify-center text-white hover:bg-[#c4ff00] hover:text-black transition-all duration-300"
+                    >
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    
+                    <div class="swiper-pagination flex-1 text-center"></div>
+                    
+                    <button 
+                        id="customNext"
+                        class="flex-shrink-0 w-12 h-12 bg-black/80 border border-gray-700 rounded-full flex items-center justify-center text-white hover:bg-[#c4ff00] hover:text-black transition-all duration-300"
+                    >
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+                
+                
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="relative py-20 px-8 animate-on-scroll">
+            <!-- Section Particles -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 25%; top: 35%; animation-delay: 3s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 80%; top: 25%; animation-delay: 5s;"></div>
+                <div class="particle absolute w-1 h-1 bg-white/10 rounded-full" style="left: 60%; top: 85%; animation-delay: 7s;"></div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-gray-400 text-sm tracking-wider mb-4 font-jakarta" style="font-weight: 500;">
+                        GET IN TOUCH
+                    </h2>
+                    <p class="text-gray-300 max-w-lg mx-auto mb-4">
+                        Got a product that needs simplifying? Let's talk.
+                    </p>
+                </div>
+
+                <div class="relative border border-gray-800 rounded-lg bg-black/50 overflow-hidden grid-bg-subtle">
+                    <!-- Background Glow -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#c4ff00]/5 via-transparent to-[#c4ff00]/5 animate-glow"></div>
+
+                    <div class="p-8 relative z-10">
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-300 text-sm mb-2">
+                                        Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        required
+                                        class="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 rounded-md form-input transition-all duration-300"
+                                        placeholder="Your name"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-300 text-sm mb-2">
+                                        Email *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        required
+                                        class="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 rounded-md form-input transition-all duration-300"
+                                        placeholder="your@email.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-300 text-sm mb-2">
+                                    Subject
+                                </label>
+                                <input
+                                    type="text"
+                                    class="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 rounded-md form-input transition-all duration-300"
+                                    placeholder="Project inquiry"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-300 text-sm mb-2">
+                                    Message *
+                                </label>
+                                <textarea
+                                    required
+                                    rows="6"
+                                    class="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 rounded-md form-input resize-none transition-all duration-300"
+                                    placeholder="Tell me about your project..."
+                                ></textarea>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <button 
+                                    type="submit"
+                                    class="bg-[#c4ff00] text-black hover:bg-[#b8f000] px-8 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover-scale"
+                                    style="box-shadow: 0 0 25px rgba(196, 255, 0, 0.25);"
+                                >
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="text-center mt-6 mb-6 pt-2 border-t border-gray-800/30">
+                    <p class="text-base text-gray-300">
+                        Based in Los Angeles • Available for remote work
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="relative py-4 px-4 border-t border-gray-800/50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center">
+                    <p class="text-sm text-gray-400">
+                        © 2025 David Chang. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Parallax shine effect based on scroll position
+        function initializeParallaxShine() {
+            const shineElement = document.querySelector('.text-shine');
+            if (!shineElement) return;
+
+            const heroSection = shineElement.closest('section');
+            
+            function updateShinePosition() {
+                const rect = heroSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculate how much of the hero section is visible
+                const visibleTop = Math.max(0, -rect.top);
+                const visibleBottom = Math.min(rect.height, windowHeight - rect.top);
+                const visibleHeight = visibleBottom - visibleTop;
+                const scrollProgress = visibleTop / rect.height;
+                
+                // Only apply effect when hero section is visible
+                if (rect.bottom > 0 && rect.top < windowHeight) {
+                    // Map scroll progress to background position (-100% to 100%)
+                    const backgroundPos = -100 + (scrollProgress * 200);
+                    shineElement.style.backgroundPosition = `${backgroundPos}% center`;
+                }
+            }
+
+            // Update on scroll
+            window.addEventListener('scroll', updateShinePosition);
+            // Initial update
+            updateShinePosition();
+        }
+
+        // Smooth scrolling functionality
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const headerOffset = 80;
+                const elementPosition = element.offsetTop - headerOffset;
+                
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            console.log('Form submitted');
+            alert('Thank you for your message! I\'ll get back to you soon.');
+        }
+
+        // Modal functionality
+        function openModal(imageSrc, imageAlt) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalLoading = document.getElementById('modalLoading');
+            
+            if (!modal || !modalImage || !modalLoading) return; // Safety check
+            
+            // Show modal and loading state
+            modal.classList.add('active');
+            modalLoading.style.display = 'block';
+            modalImage.classList.remove('loaded');
+            
+            // Prevent body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+            
+            // Load higher resolution image
+            const highResImage = new Image();
+            highResImage.onload = function() {
+                modalImage.src = this.src;
+                modalImage.alt = imageAlt;
+                modalLoading.style.display = 'none';
+                modalImage.classList.add('loaded');
+            };
+            
+            // Use higher resolution but not too large
+            highResImage.src = imageSrc.replace('w=400&h=300', 'w=800&h=600');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalLoading = document.getElementById('modalLoading');
+            
+            if (!modal || !modalImage || !modalLoading) return; // Safety check
+            
+            modal.classList.remove('active');
+            
+            // Reset image state
+            modalImage.src = '';
+            modalImage.classList.remove('loaded');
+            modalLoading.style.display = 'block';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu(event) {
+            if (event) event.preventDefault();
+            console.log('Toggle menu clicked');
+            console.log('Event target:', event.target);
+            console.log('Button element:', document.getElementById('mobileMenuBtn'));
+            console.log('Button onclick:', document.getElementById('mobileMenuBtn').onclick);
+            console.log('Current URL:', window.location.href);
+            
+            const menu = document.getElementById('mobileMenu');
+            console.log('Menu found:', !!menu);
+            const btn = document.getElementById('mobileMenuBtn');
+            
+            if (!menu || !btn) {
+                console.log('Menu elements not found');
+                return;
+            }
+            
+            if (menu.classList.contains('mobile-menu-open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+
+        function openMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (!menu) return;
+            
+            menu.classList.add('mobile-menu-open');
+            menu.style.transform = 'translateY(0)';
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (!menu) return;
+            
+            menu.classList.remove('mobile-menu-open');
+            menu.style.transform = 'translateY(-100%)';
+            menu.style.opacity = '0';
+            menu.style.visibility = 'invisible';
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            
+            if (!menu || !btn) return; // Safety check
+            
+            if (menu.classList.contains('mobile-menu-open')) {
+                if (!menu.contains(event.target) && !btn.contains(event.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
+
+        setInterval(function() {
+            const btn = document.getElementById('mobileMenuBtn');
+            if (btn && btn.onclick && btn.onclick.toString().includes('contact')) {
+                console.log('BUTTON CORRUPTED - onclick changed to:', btn.onclick.toString());
+            }
+        }, 1000);
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (modal && event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // SINGLE DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize everything when DOM is loaded
+            initializeParallaxShine();
+            
+            // Observe all animate-on-scroll elements
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(el => observer.observe(el));
+            
+            // Ensure icons are created
+            lucide.createIcons();
+            
+            // Initialize Swiper
+            console.log('DOM loaded, looking for Swiper...');
+            console.log('Swiper available:', typeof Swiper !== 'undefined');
+            
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                /*breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }*/
+            });
+            
+            console.log('Swiper initialized:', swiper);
+
+            // Connect navigation buttons
+            const prevBtn = document.getElementById('customPrev');
+            const nextBtn = document.getElementById('customNext');
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    console.log('Prev button clicked');
+                    swiper.slidePrev();
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    console.log('Next button clicked');
+                    swiper.slideNext();
+                });
+            }
+        });
+
+        // Enhanced Video Controls with Progress Bar
+        function initializeVideoControls() {
+            const videoContainers = document.querySelectorAll('.video-container');
+            
+            videoContainers.forEach(container => {
+                const video = container.querySelector('video');
+                const overlay = container.querySelector('.video-overlay');
+                const hoverControls = container.querySelector('.video-hover-controls');
+                const progressContainer = container.querySelector('.video-progress-container');
+                const progressFill = container.querySelector('.video-progress-fill');
+                const progressBg = container.querySelector('.video-progress-bg');
+                const currentTimeSpan = container.querySelector('.current-time');
+                const totalTimeSpan = container.querySelector('.total-time');
+                
+                // Format time helper
+                function formatTime(seconds) {
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins}:${secs.toString().padStart(2, '0')}`;
+                }
+                
+                // Update progress bar
+                function updateProgress() {
+                    if (video.duration) {
+                        const progress = (video.currentTime / video.duration) * 100;
+                        progressFill.style.width = `${progress}%`;
+                        currentTimeSpan.textContent = formatTime(video.currentTime);
+                        totalTimeSpan.textContent = formatTime(video.duration);
+                    }
+                }
+                
+                // Play/Pause functionality
+                function toggleVideo() {
+                    if (video.paused) {
+                        video.play();
+                        overlay.style.opacity = '0';
+                        overlay.style.pointerEvents = 'none';
+                    } else {
+                        video.pause();
+                        overlay.style.opacity = '1';
+                        overlay.style.pointerEvents = 'auto';
+                    }
+                }
+                
+                // Click handlers
+                overlay.addEventListener('click', toggleVideo);
+                hoverControls.addEventListener('click', toggleVideo);
+                video.addEventListener('click', toggleVideo);
+                
+                // Mouse enter/leave for hover controls and progress bar
+                container.addEventListener('mouseenter', () => {
+                    if (!video.paused) {
+                        hoverControls.style.opacity = '1';
+                        progressContainer.style.opacity = '1';
+                    }
+                });
+                
+                container.addEventListener('mouseleave', () => {
+                    hoverControls.style.opacity = '0';
+                    progressContainer.style.opacity = '0';
+                });
+                
+                // Video event listeners
+                video.addEventListener('loadedmetadata', () => {
+                    totalTimeSpan.textContent = formatTime(video.duration);
+                    updateProgress();
+                });
+                
+                video.addEventListener('timeupdate', updateProgress);
+                
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    overlay.style.opacity = '1';
+                    overlay.style.pointerEvents = 'auto';
+                    hoverControls.style.opacity = '0';
+                    progressContainer.style.opacity = '0';
+                    updateProgress();
+                });
+                
+                // Progress bar click to seek
+                progressBg.addEventListener('click', (e) => {
+                    const rect = progressBg.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const width = rect.width;
+                    const clickPercent = clickX / width;
+                    const newTime = clickPercent * video.duration;
+                    video.currentTime = newTime;
+                });
+                
+                // Progress bar hover effect
+                progressBg.addEventListener('mouseenter', () => {
+                    progressBg.style.transform = 'scaleY(1.5)';
+                });
+                
+                progressBg.addEventListener('mouseleave', () => {
+                    progressBg.style.transform = 'scaleY(1)';
+                });
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeVideoControls();
+            // Re-initialize Lucide icons for new elements
+            lucide.createIcons();
+        });
+    </script>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <div class="relative max-w-4xl max-h-[90vh] m-4">
+            <div id="modalLoading" class="absolute inset-0 flex items-center justify-center text-white">
+                <div class="text-lg">Loading...</div>
+            </div>
+            <img id="modalImage" class="max-w-full max-h-full object-contain opacity-0 transition-opacity duration-300" src="" alt="">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 transition-colors duration-200">
+                ×
+            </button>
+        </div>
+    </div>
+</body>
+</html>

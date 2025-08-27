@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Actions | David Chang</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Link to shared styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <!-- Fine Grid Background -->
+    <div class="fixed inset-0 opacity-[0.02] pointer-events-none grid-bg-subtle"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-black/60 backdrop-blur-xl border-b border-white/10">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <a 
+                href="index.html" 
+                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 cursor-pointer text-[16px] hover-scale"
+            >
+                David C • <span class="text-lime-400">Product Designer</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8 text-sm">
+                <a 
+                    href="index.html#about" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="index.html#latest-work" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="index.html#contact" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    CONTACT
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button 
+                id="mobileMenuBtn"
+                class="md:hidden flex items-center justify-center w-10 h-10 text-gray-400 hover:text-lime-400 transition-colors duration-300"
+                onclick="toggleMobileMenu()"
+            >
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div 
+            id="mobileMenu" 
+            class="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 transform translate-y-[-100%] opacity-0 invisible transition-all duration-300 ease-out"
+        >
+            <div class="px-8 py-6 space-y-4">
+                <a 
+                    href="index.html#about" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="index.html#latest-work" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="index.html#contact" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    CONTACT
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative py-20 px-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back Button -->
+                <div class="mb-8">
+                    <a 
+                        href="index.html#latest-work" 
+                        class="inline-flex items-center gap-2 text-gray-400 hover:text-[#c4ff00] transition-colors duration-300"
+                    >
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span class="text-sm">Back to Work</span>
+                    </a>
+                </div>
+
+                <!-- Project Header -->
+                <div class="animate-on-scroll">
+                    <div class="mb-6">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-jakarta mb-4" style="font-weight: 600; letter-spacing: -0.025em; line-height: 1.1;">
+                            Reducing Friction with <br>Quick Actions
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl" style="font-weight: 400;">
+                            Streamlining wallet navigation to transform complex steps flows into fewer tap experiences for transactions.
+                        </p>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="grid md:grid-cols-4 gap-8 mb-12">
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">ROLE</div>
+                            <div class="text-white font-inter">Lead Product Designer</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">TEAM</div>
+                            <div class="text-white font-inter">CFO, PM, Engineers, QA</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">TIMELINE</div>
+                            <div class="text-white font-inter">2.5 Months</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">IMPACT</div>
+                            <div class="text-[#c4ff00] font-inter" style="font-weight: 600;">Reduced steps by 60%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Placeholder -->
+                <div class="animate-on-scroll delay-200 mb-8">
+                    <div class="relative aspect-video bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
+                        <img 
+                            src="image/02_quick-actions/hero.png" 
+                            alt="Hero section"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="relative py-20 px-8 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        The Problem
+                    </h2>
+                </div>
+
+                <!-- Problem Content -->
+                <div class="space-y-12">
+                    <!-- The Challenge -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Challenge
+                        </h3>
+                        <div class="text-gray-300 leading-relaxed font-inter space-y-4" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            <p>
+                                Users were frustrated with our wallet's complex navigation requiring multiple screens to complete basic crypto transactions. The deeper the coin was buried in our hierarchy, the more steps users had to take.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- User Feedback -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            User Feedback
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-950/50 border-l-4 border-red-400 p-6">
+                                <p class="text-gray-300 font-inter leading-relaxed italic" style="font-weight: 400;">
+                                    "It takes too many steps just to send ENJ (crypto currency)"
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-950/50 border-l-4 border-red-400 p-6">
+                                <p class="text-gray-300 font-inter leading-relaxed italic" style="font-weight: 400;">
+                                    "Switching between multiple wallets and addresses is confusing"
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-950/50 border-l-4 border-red-400 p-6">
+                                <p class="text-gray-300 font-inter leading-relaxed italic" style="font-weight: 400;">
+                                    "Why do I have to dig into each coin just to send or receive?"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Navigation Problem -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Navigation Problem
+                        </h3>
+                        <div class="text-gray-300 leading-relaxed font-inter space-y-4" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            <p>
+                                Our previous structure was hierarchical but cumbersome:
+                            </p>
+                        </div>
+                        
+                        <div class="mt-6 space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                <span class="text-gray-300 font-inter">Wallets (collapsible groups)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                <span class="text-gray-300 font-inter">Addresses (grouped by networks like ETH, BTC)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                <span class="text-gray-300 font-inter">Coin Details (for multi-currency networks like Ethereum)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                <span class="text-gray-300 font-inter">Action Selection (Send/Receive)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <p class="text-gray-300 leading-relaxed font-inter" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                                While this organization made technical sense, it created unnecessary friction for the most common user actions.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Visual Placeholder -->
+                    <div class="my-12">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img 
+                                src="image/02_quick-actions/visual1.png" 
+                                alt="Problem illustration showing Listed NFTs vs Market Demand vs No Sales result"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Discovery Section -->
+        <section class="relative py-20 px-8 bg-gray-950/30 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Research & Discovery
+                    </h2>
+                </div>
+
+                <!-- Research Content -->
+                <div class="space-y-12">
+                    <!-- Understanding User Behavior -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Understanding User Behavior
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Transaction analysis revealed that 49.3% of all wallet activity was sending cryptocurrency, making it our highest-priority action to optimize.
+                        </p>
+
+                        <!-- Key Stat Highlight -->
+                        <div class="bg-gray-950/50 p-8 text-center">
+
+                            <!-- Visual Placeholder -->
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img 
+                                    src="image/02_quick-actions/visual2.png" 
+                                    alt="wallet activity"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                           
+
+                            <div class="text-4xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">49.3%</div>
+                            <div class="text-white font-inter mb-2" style="font-weight: 600;">of all wallet activity</div>
+                            <div class="text-gray-400 text-sm font-inter">was sending cryptocurrency</div>
+                        </div>
+                    </div>
+
+                    <!-- Competitive Analysis -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Competitive Analysis
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            I studied leading wallets to understand industry standards:
+                        </p>
+
+                        <!-- Competitive Analysis Cards -->
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Phantom Wallet</h4>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Wallet selector on top of the screen
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Trust Wallet</h4>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    More subtle visual buttons
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Coinbase Wallet</h4>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Various actions available (total 5)
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Competitive Analysis Visual Placeholder -->
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img 
+                                src="image/02_quick-actions/visual3.png" 
+                                alt="wallet activity"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Target User Personas -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Target User Personas
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-blue-500/10 rounded-lg">
+                                        <i data-lucide="zap" class="w-5 h-5 text-blue-400"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Power Users (40%)</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Multiple wallets for different purposes, trades frequently
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-green-500/10 rounded-lg">
+                                        <i data-lucide="user" class="w-5 h-5 text-green-400"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">New Users (35%)</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Single wallet, basic crypto transactions only
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-purple-500/10 rounded-lg">
+                                        <i data-lucide="code" class="w-5 h-5 text-purple-400"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Game Devs (25%)</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Needs both mainnet and testnet wallets for development
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Design Section -->
+        <section class="relative py-20 px-8 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Solution Design
+                    </h2>
+                </div>
+
+                <!-- Solution Content -->
+                <div class="space-y-12">
+                    <!-- Strategic Quick Actions -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Strategic Quick Actions
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Beyond addressing navigation pain points, we strategically included actions that served both user needs and business goals:
+                        </p>
+
+                        <!-- Quick Actions Grid -->
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="send" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Send & Receive</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed mb-2">
+                                    Core user need (49.3% of transactions)
+                                </p>
+                                <div class="text-[#c4ff00] text-xs font-inter">USER NEED</div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="hand-coins" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Staking</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed mb-2">
+                                    Increase user engagement and platform revenue
+                                </p>
+                                <div class="text-blue-400 text-xs font-inter">BUSINESS GOAL</div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="sparkles" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Quick Mint</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed mb-2">
+                                    Introduce users to NFT creation, driving marketplace activity
+                                </p>
+                                <div class="text-blue-400 text-xs font-inter">BUSINESS GOAL</div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="zap" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Quick Actions Bar</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed mb-2">
+                                    Prominent placement for immediate access
+                                </p>
+                                <div class="text-purple-400 text-xs font-inter">UX SOLUTION</div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions Visual Placeholder -->
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img 
+                                src="image/02_quick-actions/visual4.png" 
+                                alt="Send Receive Stake Mint flows"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Design Explorations -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Design Explorations
+                        </h3>
+                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8 mb-8">
+                            <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Challenge</h4>
+                            <p class="text-gray-300 font-inter leading-relaxed mb-4" style="font-weight: 400;">
+                                How do we show the right information first after users tap Send or Receive?
+                            </p>
+                            <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Solution: Coin-first selection flow</h4>
+                            <ol class="text-gray-300 font-inter leading-relaxed space-y-2" style="font-weight: 400;">
+                                <li>1. Select cryptocurrency type (narrows available networks)</li>
+                                <li>2. Choose recipient address (filtered by network compatibility)</li>
+                                <li>3. Enter amount</li>
+                            </ol>
+                            <p class="text-gray-300 font-inter leading-relaxed mt-4" style="font-weight: 400;">
+                                This approach aligned with industry best practices and reduced cognitive load.
+                            </p>
+                        </div>
+
+                        <!-- Send Flow Visual Placeholder -->
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img 
+                                src="image/02_quick-actions/visual5.png" 
+                                alt="Send flow"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Smart Wallet Organization -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Smart Wallet Organization
+                        </h3>
+                        
+                        <div class="space-y-8">
+                            <!-- New Wallet Selector -->
+                            <div>
+                                <h4 class="text-white font-inter mb-4" style="font-weight: 600;">New Wallet Selector</h4>
+                                <p class="text-gray-300 leading-relaxed font-inter mb-6" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                                    Added prominent wallet switcher at top of screen:
+                                </p>
+
+                                <!-- Send Flow Visual Placeholder -->
+                                <div class="relative aspect-[2/1] overflow-hidden">
+                                    <img 
+                                        src="image/02_quick-actions/visual6.png" 
+                                        alt="Send flow"
+                                        class="w-full h-full object-contain"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Improved Address Display -->
+                            <div>
+                                <h4 class="text-white font-inter mt-16" style="font-weight: 600;">Improved Address Display</h4>
+                            </div>
+                        </div>
+
+                        <!-- Send Flow Visual Placeholder -->
+                        <div class="relative aspect-[2.5/1] overflow-hidden">
+                            <img 
+                                src="image/02_quick-actions/visual7.png" 
+                                alt="Send flow"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact & Results Section -->
+        <section class="relative py-20 px-8 bg-gray-950/30 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Impact & Results
+                    </h2>
+                </div>
+
+                <!-- Results Content -->
+                <div class="space-y-12">
+                    <!-- The Results -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Results
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            The redesigned navigation created a more streamlined experience, though the transition period revealed important insights about user adaptation to interface changes.
+                        </p>
+
+                        <!-- Results Visual Placeholder -->
+                        <div class="my-12">
+                            <div class="relative aspect-[2.5/1] overflow-hidden">
+                                <img 
+                                    src="image/02_quick-actions/visual8.png" 
+                                    alt="Analytic graph of active accounts and engagement"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Key Metrics -->
+                        <div class="mb-12">
+                            <h4 class="text-lg font-inter mb-6 text-white" style="font-weight: 600;">Key Metrics</h4>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="text-center p-8 bg-gray-900/50 border border-gray-800 rounded-lg">
+                                    <div class="text-5xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">60%</div>
+                                    <div class="text-white font-inter mb-2" style="font-weight: 600;">Reduction in Steps</div>
+                                    <div class="text-gray-400 text-sm font-inter">for basic transactions</div>
+                                </div>
+                                <div class="text-center p-8 bg-gray-900/50 border border-gray-800 rounded-lg">
+                                    <div class="text-5xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">131%</div>
+                                    <div class="text-white font-inter mb-2" style="font-weight: 600;">Increase in User Engagement</div>
+                                    <div class="text-gray-400 text-sm font-inter">transactions per active user: 3.11 → 7.19</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <!-- User Impact -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            User Impact
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-green-500/10 rounded-lg">
+                                        <i data-lucide="trending-up" class="w-5 h-5 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Higher Quality Engagement</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            While some users needed time to adapt, those who embraced the new design showed dramatically higher activity levels.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-blue-500/10 rounded-lg">
+                                        <i data-lucide="zap" class="w-5 h-5 text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Streamlined Experience</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Most common actions now accessible in 1-2 taps
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-purple-500/10 rounded-lg">
+                                        <i data-lucide="blend" class="w-5 h-5 text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Business Alignment</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Strategic quick actions drove engagement in key features
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Learnings -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Key Learnings
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-orange-500/10 rounded-lg">
+                                        <i data-lucide="arrow-down-wide-narrow" class="w-5 h-5 text-orange-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Hierarchy vs. Accessibility</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Sometimes flat access trumps logical organization
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-cyan-500/10 rounded-lg">
+                                        <i data-lucide="scale" class="w-5 h-5 text-cyan-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Business + UX Balance</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Quick actions can serve dual purposes when chosen strategically
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-pink-500/10 rounded-lg">
+                                        <i data-lucide="eye" class="w-5 h-5 text-pink-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Progressive Disclosure</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Show what users need most, hide complexity until needed
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Case Study Navigation -->
+        <section class="relative py-16 px-8 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between gap-8">
+                    <!-- Previous Case Study -->
+                    <div class="flex-1">
+                        <div class="text-gray-400 text-sm font-inter mb-2 tracking-wider">
+                            PREVIOUS
+                        </div>
+                        <h3 class="text-white font-inter text-lg mb-4" style="font-weight: 600;">
+                            Marketplace Offers
+                        </h3>
+                        <button 
+                            onclick="window.location.href='offer.html'"
+                            class="rounded-full text-sm px-6 py-2 relative z-10 transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;"
+                            style="font-weight: 500;"
+                        >
+                            See case study
+                        </button>
+                    </div>
+
+                    <!-- Next Case Study -->
+                    <div class="flex-1 text-left md:text-right">
+                        <div class="text-gray-400 text-sm font-inter mb-2 tracking-wider">
+                            NEXT
+                        </div>
+                        <h3 class="text-white font-inter text-lg mb-4" style="font-weight: 600;">
+                            Beam Dashboard
+                        </h3>
+                        <button 
+                            onclick="window.location.href='beam-dashboard.html'"
+                            class="rounded-full text-sm px-6 py-2 relative z-10 transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;"
+                        >
+                            See case study
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animate-on-scroll elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(el => observer.observe(el));
+        });
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            if (menu.classList.contains('mobile-menu-open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+
+        function openMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            menu.classList.add('mobile-menu-open');
+            menu.style.transform = 'translateY(0)';
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            
+            // Change icon to X
+            icon.setAttribute('data-lucide', 'x');
+            lucide.createIcons();
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            menu.classList.remove('mobile-menu-open');
+            menu.style.transform = 'translateY(-100%)';
+            menu.style.opacity = '0';
+            menu.style.visibility = 'invisible';
+            
+            // Change icon back to menu
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            
+            if (menu && menu.classList.contains('mobile-menu-open')) {
+                if (!menu.contains(event.target) && !btn.contains(event.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

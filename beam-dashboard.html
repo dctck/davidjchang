@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beam Dashboard | David Chang</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Link to shared styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <!-- Fine Grid Background -->
+    <div class="fixed inset-0 opacity-[0.02] pointer-events-none grid-bg-subtle"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-black/60 backdrop-blur-xl border-b border-white/10">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <a 
+                href="index.html" 
+                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 cursor-pointer text-[16px] hover-scale"
+            >
+                David C • <span class="text-lime-400">Product Designer</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8 text-sm">
+                <a 
+                    href="index.html#about" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="index.html#latest-work" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="index.html#contact" 
+                    class="text-gray-400 hover:text-lime-400 transition-colors duration-300 hover-scale"
+                >
+                    CONTACT
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button 
+                id="mobileMenuBtn"
+                class="md:hidden flex items-center justify-center w-10 h-10 text-gray-400 hover:text-lime-400 transition-colors duration-300"
+                onclick="toggleMobileMenu()"
+            >
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div 
+            id="mobileMenu" 
+            class="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 transform translate-y-[-100%] opacity-0 invisible transition-all duration-300 ease-out"
+        >
+            <div class="px-8 py-6 space-y-4">
+                <a 
+                    href="index.html#about" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    ABOUT
+                </a>
+                <a 
+                    href="index.html#latest-work" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    WORK
+                </a>
+                <a 
+                    href="index.html#contact" 
+                    class="block text-gray-400 hover:text-lime-400 transition-colors duration-300 text-lg"
+                    onclick="closeMobileMenu()"
+                >
+                    CONTACT
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative py-20 px-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back Button -->
+                <div class="mb-8">
+                    <a 
+                        href="index.html#latest-work" 
+                        class="inline-flex items-center gap-2 text-gray-400 hover:text-[#c4ff00] transition-colors duration-300"
+                    >
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span class="text-sm">Back to Work</span>
+                    </a>
+                </div>
+
+                <!-- Project Header -->
+                <div class="animate-on-scroll">
+                    <div class="mb-6">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-jakarta mb-4" style="font-weight: 600; letter-spacing: -0.025em; line-height: 1.1;">
+                            Beam Dashboard
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl" style="font-weight: 400;">
+                            Transforming a manual distribution process into a self-service platform that empowers creators while preventing automated abuse.
+                        </p>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="grid md:grid-cols-4 gap-8 mb-12">
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">ROLE</div>
+                            <div class="text-white font-inter">Lead Product Designer</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">TEAM</div>
+                            <div class="text-white font-inter">CFO, Jr. Designer, PM, Engineers, QA</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">TIMELINE</div>
+                            <div class="text-white font-inter">1.5 Months</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">IMPACT</div>
+                            <div class="text-[#c4ff00] font-inter" style="font-weight: 600;">300% increase in campaigns</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Placeholder -->
+                <div class="animate-on-scroll delay-200 mb-8">
+                    <div class="relative aspect-video bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
+                        <img 
+                            src="image/03_beam-dashboard/hero.png" 
+                            alt="Hero section"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="relative py-20 px-8 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        The Problem
+                    </h2>
+                </div>
+
+                <!-- Problem Content -->
+                <div class="space-y-12">
+                    <!-- The Challenge -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Challenge
+                        </h3>
+                        <div class="text-gray-300 leading-relaxed font-inter space-y-4" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            <p>
+                                Creators wanted to distribute digital collectibles to their communities, but our manual process was a bottleneck. They had to submit forms and wait days for our team to create QR codes for distribution.
+                            </p>
+                            <p>
+                                Our existing creator tool was overly technical, and worse, automated bots made by exploiters were claiming all items before real community members could participate.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- User Pain Points -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            User Pain Points
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-950/50 border-l-4 border-red-400 p-6">
+                                <p class="text-gray-300 font-inter leading-relaxed italic" style="font-weight: 400;">
+                                    "The approval process takes too long... my event will be over by then"
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-950/50 border-l-4 border-red-400 p-6">
+                                <p class="text-gray-300 font-inter leading-relaxed italic" style="font-weight: 400;">
+                                    "The interface is too technical, I don't understand these settings"
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-950/50 border-l-4 border-red-400 p-6">
+                                <p class="text-gray-300 font-inter leading-relaxed italic" style="font-weight: 400;">
+                                    "Bots grabbed everything before my real fans could claim anything"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Placeholder -->
+                    <div class="my-8">
+                        <div class="relative aspect-[1.5/1] overflow-hidden">
+                            <img 
+                                src="image/03_beam-dashboard/visual1.png" 
+                                alt="previous version of design"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Discovery Section -->
+        <section class="relative py-20 px-8 bg-gray-950/30 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Research & Discovery
+                    </h2>
+                </div>
+
+                <!-- Research Content -->
+                <div class="space-y-12">
+                    <!-- Understanding Creator Workflows -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Understanding Creator Workflows
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Through user interviews, I discovered three main distribution patterns:
+                        </p>
+
+                        <!-- Distribution Methods -->
+                        <div class="grid md:grid-cols-3 gap-8 mb-8">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                                <div class="text-3xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">70%</div>
+                                <div class="flex items-center justify-center gap-2 mb-3">
+                                    
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Social Media</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter">Shared via Twitter, Telegram to build community</p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                                <div class="text-3xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">25%</div>
+                                <div class="flex items-center justify-center gap-2 mb-3">
+                                    
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">In-person Events</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter">Used at conferences, meetups for on-site engagement</p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                                <div class="text-3xl font-jakarta text-[#c4ff00] mb-3" style="font-weight: 700;">5%</div>
+                                <div class="flex items-center justify-center gap-2 mb-3">
+                                    
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Digital Campaigns</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter">Embedded in websites and marketing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Insight -->
+                    <div>
+                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
+                            <div class="flex items-start gap-4">
+                                <div class="p-2 bg-[#c4ff00]/10 rounded-lg">
+                                    <i data-lucide="lightbulb" class="w-6 h-6 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Key Insight</h4>
+                                    <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                        Creators needed both mass distribution capability AND security controls to ensure real people, not bots, received their items.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Bot Problem -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            The Bot Problem
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-6" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Analysis revealed campaigns were being "swept" by automated claiming within minutes, defeating the purpose of community building.
+                        </p>
+                        
+                        <h4 class="text-white font-inter mb-4" style="font-weight: 600;">Security Requirements:</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                <span class="text-gray-300 font-inter">Prevent mass automated claiming (Claim Limits)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                <span class="text-gray-300 font-inter">Allow targeting specific communities (Locations)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                <span class="text-gray-300 font-inter">Enable tracking for accountability (Manager/Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Placeholder -->
+                    <div class="my-8">
+                        <div class="relative aspect-[1.8/1] overflow-hidden">
+                            <img 
+                                src="image/03_beam-dashboard/visual2.png" 
+                                alt="evidence that bots were problem"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Design Section -->
+        <section class="relative py-20 px-8 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Solution Design
+                    </h2>
+                </div>
+
+                <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                        Complete User Flow
+                </h3>
+                <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                    With no direct competitors in the blockchain industry, I drew inspiration from indirect ones and designed a comprehensive flow to guide first-time users from start to distribution.
+                </p>
+
+                <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-6 mb-8">
+                        <h4 class="text-white font-inter mb-4" style="font-weight: 600;">In-Direct Competitor Research</h4>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="text-[#c4ff00] font-inter mb-2 text-sm" style="font-weight: 600;">QR Code Generators</h5>
+                                <div class="space-y-1 text-gray-400 text-sm">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                                        <span>Simple creation flows</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                                        <span>Analytics dashboards</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                                        <span>Bulk generation options</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="text-[#c4ff00] font-inter mb-2 text-sm" style="font-weight: 600;">Concert Ticket Services</h5>
+                                <div class="space-y-1 text-gray-400 text-sm">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                                        <span>Anti-bot security measures</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                                        <span>Distribution controls</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                                        <span>Real-time claiming tracking</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visual Placeholder -->
+                        <div class="my-4">
+                            <div class="relative aspect-[1.4/1] overflow-hidden">
+                                <img 
+                                    src="image/03_beam-dashboard/visual6.png" 
+                                    alt="Indirect Competitor Reseach"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+
+                <!-- Visual Placeholder -->
+                <div class="my-12">
+                    <div class="relative aspect-[1.4/1] overflow-hidden">
+                        <img 
+                            src="image/03_beam-dashboard/visual7.png" 
+                            alt="user flow"
+                            class="w-full h-full object-contain"
+                        />
+                    </div>
+                </div>
+
+                <!-- Solution Content -->
+                <div class="space-y-12">
+                    <!-- Self-Service Campaign Builder -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Marketplace based Beam Dashboard
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            I designed a easy-to-use dashboard that gave creators full control while building in smart security defaults.
+                        </p>
+
+                        <!-- Core Experience Features -->
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="layout-dashboard" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Visual Claim Page</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Designed for easy sharing, since many creators screenshot their claims
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="shield-check" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Smart Security Options</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Enhanced protections with multiple safeguards <br>to keep bots out
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="chart-pie" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Analytic Tools</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    Visualize where claims occurred and <br>track progress with graphs
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-800 rounded-lg">
+                                        <i data-lucide="activity" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    </div>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Real-time Monitoring</h4>
+                                </div>
+                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
+                                    A live dashboard displays all beams and <br> their distribution progress
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Dashboard Visual Placeholder -->
+                        <div class="my-8">
+                        <div class="relative aspect-[1.8/1] overflow-hidden">
+                            <img 
+                                src="image/03_beam-dashboard/visual3.png" 
+                                alt="evidence that bots were problem"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+
+                        <!-- video prototype -->
+                        <div class="my-8">
+                            <div class="relative aspect-[1.8/1] overflow-hidden rounded-lg">
+                                <video 
+                                    class="w-full h-full object-contain" 
+                                    autoplay 
+                                    loop 
+                                    muted 
+                                    playsinline
+                                >
+                                    <source src="image/03_beam-dashboard/video1.mp4" type="video/mp4">
+                                    
+                                </video>
+                            </div>
+                        </div>
+                   
+                    </div>
+
+                    <!-- Anti-Abuse Strategy -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Anti-Abuse Strategy
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Instead of complex technical controls, I focused on user-friendly options:
+                        </p>
+
+                        <!-- Community Targeting Options -->
+                        <div class="space-y-6 mb-8">
+                            <h4 class="text-white font-inter" style="font-weight: 600;">Access Controls</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 bg-blue-500/10 rounded">
+                                        <i data-lucide="user-check" class="w-4 h-4 text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-inter text-sm mb-1" style="font-weight: 600;">Community-based</h5>
+                                        <p class="text-gray-400 text-sm font-inter">Linked social accounts, verified memberships, or holders of specific items</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 bg-green-500/10 rounded">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-inter text-sm mb-1" style="font-weight: 600;">Geographic Targeting</h5>
+                                        <p class="text-gray-400 text-sm font-inter">Exclude high-bot regions</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 bg-purple-500/10 rounded">
+                                        <i data-lucide="key" class="w-4 h-4 text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-inter text-sm mb-1" style="font-weight: 600;">Holders Benefit</h5>
+                                        <p class="text-gray-400 text-sm font-inter">Only holders of a specific item</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 bg-orange-500/10 rounded">
+                                        <i data-lucide="user-x" class="w-4 h-4 text-orange-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-inter text-sm mb-1" style="font-weight: 600;">Claim Limits</h5>
+                                        <p class="text-gray-400 text-sm font-inter">One-per-person limits with wallet verification</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Distribution Flexibility -->
+                        <div>
+                            <h4 class="text-white font-inter mb-4" style="font-weight: 600;">Distribution Modes</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-2 bg-[#c4ff00] rounded-full"></div>
+                                    <span class="text-gray-300 font-inter"><strong>Mass Share:</strong> One QR code for social media (with protections)</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-2 bg-[#c4ff00] rounded-full"></div>
+                                    <span class="text-gray-300 font-inter"><strong>Unique Codes:</strong> Individual QR codes for events, trackable per person</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-2 bg-[#c4ff00] rounded-full"></div>
+                                    <span class="text-gray-300 font-inter"><strong>Hybrid:</strong> Mix of both approaches for maximum control</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visual Placeholder -->
+                        <div class="my-8">
+                        <div class="relative aspect-[1.8/1] overflow-hidden">
+                            <img 
+                                src="image/03_beam-dashboard/visual4.png" 
+                                alt="distribution methods"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Branded Experience -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Branded Experience
+                        </h3>
+                        
+                        <h4 class="text-white font-inter mb-4" style="font-weight: 600;">Custom Claim Pages:</h4>
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="flex items-start gap-3">
+                                <div class="p-1 bg-[#c4ff00]/10 rounded">
+                                    <i data-lucide="palette" class="w-4 h-4 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <span class="text-gray-300 font-inter">Creator branding and messaging</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="p-1 bg-[#c4ff00]/10 rounded">
+                                    <i data-lucide="eye" class="w-4 h-4 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <span class="text-gray-300 font-inter">Item previews and availability counter</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="p-1 bg-[#c4ff00]/10 rounded">
+                                    <i data-lucide="info" class="w-4 h-4 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <span class="text-gray-300 font-inter">Clear claiming instructions</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="p-1 bg-[#c4ff00]/10 rounded">
+                                    <i data-lucide="share" class="w-4 h-4 text-[#c4ff00]"></i>
+                                </div>
+                                <div>
+                                    <span class="text-gray-300 font-inter">Social sharing integration</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visual Placeholder -->
+                        <div class="my-4">
+                        <div class="relative aspect-[2.19/1] overflow-hidden">
+                            <img 
+                                src="image/03_beam-dashboard/visual5.png" 
+                                alt="distribution methods"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact & Results Section -->
+        <section class="relative py-20 px-8 bg-gray-950/30 animate-on-scroll">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
+                        Impact & Results
+                    </h2>
+                </div>
+
+                <!-- Results Content -->
+                <div class="space-y-12">
+                    <!-- Transformation Success -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Transformation Success
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            The Beam dashboard launch created immediate platform growth and sustained long-term engagement, proving that empowering creators drives ecosystem-wide value.
+                        </p>
+
+                        <!-- social media video prototype -->
+                        <div class="my-12">
+                            <div class="relative aspect-[1.8/1] overflow-hidden rounded-lg">
+                                <video 
+                                    class="w-full h-full object-contain" 
+                                    autoplay 
+                                    loop 
+                                    muted 
+                                    playsinline
+                                >
+                                    <source src="image/03_beam-dashboard/video2.mp4" type="video/mp4">
+                                    
+                                </video>
+                            </div>
+                        </div>
+
+                        <!-- Key Metrics -->
+                        <div class="mb-12">
+                            <h4 class="text-lg font-inter mb-6 text-white" style="font-weight: 600;">Key Metrics</h4>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="text-center p-6 bg-gray-900/50 border border-gray-800 rounded-lg">
+                                    <div class="text-4xl font-jakarta text-[#c4ff00] mb-2" style="font-weight: 700;">71%</div>
+                                    <div class="text-white font-inter mb-1 text-sm" style="font-weight: 600;">Increase in Active Accounts</div>
+                                    <div class="text-gray-400 text-xs font-inter">in launch month (35% new users)</div>
+                                </div>
+                                <div class="text-center p-6 bg-gray-900/50 border border-gray-800 rounded-lg">
+                                    <div class="text-4xl font-jakarta text-[#c4ff00] mb-2" style="font-weight: 700;">214%</div>
+                                    <div class="text-white font-inter mb-1 text-sm" style="font-weight: 600;">Account Growth</div>
+                                    <div class="text-gray-400 text-xs font-inter">by month 4 with 90%+ claim success</div>
+                                </div>
+                                <div class="text-center p-6 bg-gray-900/50 border border-gray-800 rounded-lg">
+                                    <div class="text-4xl font-jakarta text-[#c4ff00] mb-2" style="font-weight: 700;">185%</div>
+                                    <div class="text-white font-inter mb-1 text-sm" style="font-weight: 600;">Increase in Unique Holders</div>
+                                    <div class="text-gray-400 text-xs font-inter">proving retention beyond campaigns</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Quality Engagement & Network Effects -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Quality Engagement & Network Effects
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-green-500/10 rounded-lg">
+                                        <i data-lucide="users" class="w-5 h-5 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">High-Quality Usage</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed mb-2" style="font-weight: 400;">
+                                            78% of claims came from unique users (not repeat claimers), indicating genuine community building rather than promotional spikes.
+                                        </p>
+                                        <div class="text-[#c4ff00] font-inter text-sm" style="font-weight: 600;">78% unique user engagement</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-blue-500/10 rounded-lg">
+                                        <i data-lucide="shopping-bag" class="w-5 h-5 text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Marketplace Impact</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed mb-2" style="font-weight: 400;">
+                                            Secondary activity peaked 1 month after campaigns, with 15% better sell-through rates and 12% higher median prices.
+                                        </p>
+                                        <div class="flex gap-4 text-sm">
+                                            <div class="text-[#c4ff00] font-inter" style="font-weight: 600;">+15% sell-through</div>
+                                            <div class="text-[#c4ff00] font-inter" style="font-weight: 600;">+12% median prices</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visual Placeholder -->
+                        <div class="my-12">
+                        <div class="relative aspect-[1.2/1] overflow-hidden">
+                            <img 
+                                src="image/03_beam-dashboard/visual8.png" 
+                                alt="show landing page update"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Strategic Impact -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Strategic Impact
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-purple-500/10 rounded-lg">
+                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Creator Empowerment Led to Platform Growth</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Self-service tools enabled creators to drive community building, creating a scalable growth engine.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-orange-500/10 rounded-lg">
+                                        <i data-lucide="target" class="w-5 h-5 text-orange-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Quality Over Quantity</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Focus on genuine engagement (vs. mass distribution) resulted in higher retention and economic activity.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-cyan-500/10 rounded-lg">
+                                        <i data-lucide="network" class="w-5 h-5 text-cyan-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Network Effects</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Beam created lasting creator-community connections that drove ongoing platform value beyond initial distribution.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Learnings -->
+                    <div>
+                        <h3 class="text-xl font-inter mt-6 mb-6 text-[#c4ff00]" style="font-weight: 600;">
+                            Key Learnings
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-blue-500/10 rounded-lg">
+                                        <i data-lucide="zap" class="w-5 h-5 text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Self-Service Scales</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Automated tools serve users better than manual processes
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-green-500/10 rounded-lg">
+                                        <i data-lucide="shield" class="w-5 h-5 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Security Through Simplicity</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Easy-to-understand controls get used more effectively
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-purple-500/10 rounded-lg">
+                                        <i data-lucide="heart" class="w-5 h-5 text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Community First</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Successful campaigns prioritized genuine engagement over mass reach
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-yellow-500/10 rounded-lg">
+                                        <i data-lucide="layers" class="w-5 h-5 text-yellow-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Progressive Complexity</h4>
+                                        <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                            Start simple, add advanced features for power users
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Case Study Navigation -->
+        <section class="relative py-16 px-8 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between gap-8">
+                    <!-- Previous Case Study -->
+                    <div class="flex-1">
+                        <div class="text-gray-400 text-sm font-inter mb-2 tracking-wider">
+                            PREVIOUS
+                        </div>
+                        <h3 class="text-white font-inter text-lg mb-4" style="font-weight: 600;">
+                            REDUCING FRICTION WITH QUICK ACTIONS
+                        </h3>
+                        <button 
+                            onclick="window.location.href='quick-actions.html'"
+                            class="rounded-full text-sm px-6 py-2 relative z-10 transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;"
+                            style="font-weight: 500;"
+                        >
+                            See case study
+                        </button>
+                    </div>
+
+                    <!-- Next Case Study -->
+                    <div class="flex-1 text-left md:text-right">
+                        <div class="text-gray-400 text-sm font-inter mb-2 tracking-wider">
+                            NEXT
+                        </div>
+                        <h3 class="text-white font-inter text-lg mb-4" style="font-weight: 600;">
+                            Marketplace Offers
+                        </h3>
+                        <button 
+                            onclick="window.location.href='offer.html'"
+                            class="rounded-full text-sm px-6 py-2 relative z-10 transition-all duration-300 bg-[#c4ff00] text-black font-jakarta" style="font-weight: 500;"
+                        >
+                            See case study
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animate-on-scroll elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(el => observer.observe(el));
+        });
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            if (menu.classList.contains('mobile-menu-open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+
+        function openMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            menu.classList.add('mobile-menu-open');
+            menu.style.transform = 'translateY(0)';
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            
+            // Change icon to X
+            icon.setAttribute('data-lucide', 'x');
+            lucide.createIcons();
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            const icon = btn.querySelector('i');
+            
+            menu.classList.remove('mobile-menu-open');
+            menu.style.transform = 'translateY(-100%)';
+            menu.style.opacity = '0';
+            menu.style.visibility = 'invisible';
+            
+            // Change icon back to menu
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('mobileMenuBtn');
+            
+            if (menu && menu.classList.contains('mobile-menu-open')) {
+                if (!menu.contains(event.target) && !btn.contains(event.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
