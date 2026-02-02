@@ -189,10 +189,13 @@
                         </h3>
                         <div class="text-gray-300 leading-relaxed font-inter space-y-4" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
                             <p>
-                                Our NFT marketplace had a fundamental pricing disconnect. While we had plenty of listings, most were priced too high to sell. Sellers, especially newcomers, lacked market insight to price competitively.
+                                Our COO challenged us, "We need to increase marketplace transaction volume." That was it. No specs, no clear direction.
                             </p>
                             <p>
-                                Floor prices only showes the lowest listed price not what actually sold. This led to stagnant inventory and frustrated users on both sides.
+                                I started by digging into the data and talking to our PM. We had plenty of listings, but few sales. The disconnect wasn't obvious at first. Through behavioral analysis, I discovered <b>sellers were pricing NFTs too high</b> because they did not have any data avaialable to make informed decision. Meanwhile, buyers were interested but had no way to signal their intent.
+                            </p>
+                            <p>
+
                             </p>
                         </div>
                     </div>
@@ -205,72 +208,6 @@
                                 alt="Problem illustration showing Listed NFTs vs Market Demand vs No Sales result"
                                 class="w-full h-full object-contain"
                             />
-                        </div>
-                    </div>
-
-                    <!-- Key Behavioral Insights -->
-                    <div>
-                        <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
-                            Key Behavioral Insights
-                        </h3>
-                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            We observed several patterns through user behavior analysis:
-                        </p>
-                        
-                        <!-- Insights Grid -->
-                        <div class="grid md:grid-cols-3 gap-8">
-                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="p-2 bg-gray-800 rounded-lg">
-                                        <i data-lucide="trending-up" class="w-5 h-5 text-[#c4ff00]"></i>
-                                    </div>
-                                    <h4 class="text-white font-inter" style="font-weight: 600;">High Listing Volume</h4>
-                                </div>
-                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
-                                    Lots of NFTs listed but only few sells
-                                </p>
-                            </div>
-
-                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="p-2 bg-gray-800 rounded-lg">
-                                        <i data-lucide="help-circle" class="w-5 h-5 text-[#c4ff00]"></i>
-                                    </div>
-                                    <h4 class="text-white font-inter" style="font-weight: 600;">Seller Confusion</h4>
-                                </div>
-                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
-                                    New sellers lack understanding of good pricing
-                                </p>
-                            </div>
-
-                            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="p-2 bg-gray-800 rounded-lg">
-                                        <i data-lucide="x-circle" class="w-5 h-5 text-[#c4ff00]"></i>
-                                    </div>
-                                    <h4 class="text-white font-inter" style="font-weight: 600;">Failed Auctions</h4>
-                                </div>
-                                <p class="text-gray-400 text-sm font-inter leading-relaxed">
-                                    Good bid activity existed but rarely met minimum thresholds
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional Problem Context -->
-                    <div>
-                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
-                            <div class="flex items-start gap-4">
-                                <div class="p-2 bg-red-500/10 rounded-lg">
-                                    <i data-lucide="alert-triangle" class="w-6 h-6 text-red-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Transaction History Evidence</h4>
-                                    <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
-                                        Sales happened when prices aligned with market demand—but these were rare. Most listings had unrealistic pricing, which discouraged both buyers and newcomers from participating.
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -292,10 +229,10 @@
                     <!-- Understanding the Market -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            Understanding the Market
+                            Competitive Analysis
                         </h3>
                         <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            With a tight timeline, we focused on competitive analysis and behavioral data. I studied how leading platforms like OpenSea, Magic Eden, and OKX handled price discovery.
+                            To understand what was missing, I conducted a competitive analysis of OpenSea, Magic Eden, and OKX. That's when it clicked: every major platform had an offers system. We didn't. Offers weren't just a feature, they were the missing piece that would create price discovery and market feedback. I also took note of what other features were complementing the Offer feature.
                         </p>
 
                         <!-- Competitive Analysis Visual Placeholder -->
@@ -327,17 +264,50 @@
                             </div>
                         </div>
 
-                        <!-- Key Insight Callout -->
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            From Strategy to Execution
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Once I validated that offers were the right solution, I worked closely with our CFO and engineers to understand technical constraints. Enjin's blockchain requires manual reclaiming of funds for unaccepted offers - a limitation that would shape the UX.
+I wrote detailed specs outlining three core flows:
+                        <ol>
+                          <li>
+                            <strong>Item Detail View</strong> – Displaying all offers on an NFT with accept/decline actions
+                          </li>
+                          <li>
+                            <strong>Offers &amp; Bids Hub</strong> – A dashboard in user profiles to manage all active offers
+                          </li>
+                          <li>
+                            <strong>Offer Settings</strong> – Letting sellers set minimum offer thresholds to reduce noise
+                          </li>
+                        </ol>
+                        
+                    </div>
+                    
+                    <!-- Technical Considerations -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Technical Considerations
+                        </h3>
                         <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
-                            <div class="flex items-start gap-4">
-                                <div class="p-2 bg-[#c4ff00]/10 rounded-lg">
-                                    <i data-lucide="lightbulb" class="w-6 h-6 text-[#c4ff00]"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Key Insight</h4>
-                                    <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
-                                        Sellers need market feedback to price competitively, and offers provide real-time demand.
-                                    </p>
+                            <div class="mb-6">
+                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Limitation</h4>
+                                <p class="text-gray-300 font-inter leading-relaxed mb-4" style="font-weight: 400;">
+                                    Early in the design process, I learned Enjin's blockchain requires buyers to manually reclaim unaccepted offers - funds don't automatically return.                                       </p>
+                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">UX Solution</h4>
+                                <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
+                                    Rather than seeing this as a blocker, I worked with engineers to design a notification system that would turn this into a feature, creating a "Claim" CTA in the Offers & Bids hub.
+                                </p>
+                            </div>
+
+                            <!-- Notification mockup placeholder -->
+                            <div>
+                                <div class="relative aspect-[16/5] overflow-hidden">
+                                    <img 
+                                        src="/image/01_offer/visual7.png" 
+                                        alt="Re claim placed offers"
+                                        class="w-full h-full object-contain"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -458,35 +428,8 @@
                         </div>
                     </div>
 
-                    <!-- Technical Considerations -->
-                    <div>
-                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            Technical Considerations
-                        </h3>
-                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
-                            <div class="mb-6">
-                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Blockchain Constraint</h4>
-                                <p class="text-gray-300 font-inter leading-relaxed mb-4" style="font-weight: 400;">
-                                    Enjin’s network requires buyers to manually reclaim unaccepted offers, as funds don’t automatically return to their wallets. We planned an improvement for this after release.
-                                </p>
-                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">UX Solution</h4>
-                                <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
-                                    Implemented Claim CTA to remind users of reclaimable offers in Offers & Bid dashboard.
-                                </p>
-                            </div>
-
-                            <!-- Notification mockup placeholder -->
-                            <div>
-                                <div class="relative aspect-[16/5] overflow-hidden">
-                                    <img 
-                                        src="/image/01_offer/visual7.png" 
-                                        alt="Re claim placed offers"
-                                        class="w-full h-full object-contain"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                </div>
         </section>
 
         <!-- Impact & Results Section -->
