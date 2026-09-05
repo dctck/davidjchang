@@ -132,7 +132,7 @@
                             NFT Marketplace Offers
                         </h1>
                         <p class="text-xl md:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl" style="font-weight: 400;">
-                            Bridging the pricing gap between buyers and sellers to unlock marketplace potential and drive transaction volume growth.
+                            Giving buyers a way to signal real demand so sellers could price more realistically and the marketplace could move.
                         </p>
                     </div>
 
@@ -148,7 +148,7 @@
                         </div>
                         <div>
                             <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">TIMELINE</div>
-                            <div class="text-white font-inter">4 Weeks</div>
+                            <div class="text-white font-inter">5 Weeks</div>
                         </div>
                         <div>
                             <div class="text-gray-400 text-sm mb-2 font-inter" style="font-weight: 500;">IMPACT</div>
@@ -182,17 +182,17 @@
 
                 <!-- Problem Content -->
                 <div class="space-y-12">
-                    <!-- The Challenge -->
+                    <!-- The Business Question -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            The Challenge
+                            The Business Question
                         </h3>
                         <div class="text-gray-300 leading-relaxed font-inter space-y-4" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
                             <p>
-                                The initial brief was simple: increase marketplace transaction volume. There were no detailed requirements or prescribed solutions, which required us to define the problem space before designing solutions.
+                                The brief was intentionally broad: increase transaction volume on the marketplace. There was no feature attached to it, so I first needed to understand why people were not buying.
                             </p>
                             <p>
-                                I started by digging into the data and talking to our PM. We had plenty of listings, but few sales. The disconnect wasn't obvious at first. Through behavioral analysis, I discovered <b>sellers were pricing NFTs too high</b> because they did not have any data avaialable to make informed decision. Meanwhile, buyers were interested but had no way to signal their intent.
+                                Marketplace activity showed plenty of listings but relatively few sales. Sellers were often pricing above what buyers were willing to pay, while buyers had no way to communicate a lower price. The issue was not a lack of inventory. It was a gap between asking price and real demand.
                             </p>
                             <p>
 
@@ -229,13 +229,13 @@
                     <!-- Understanding the Market -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            Competitive Analysis
+                            How Other Marketplaces Exposed Demand
                         </h3>
                         <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            To understand what was missing, I conducted a competitive analysis of OpenSea, Magic Eden, and OKX. That's when it clicked: every major platform had an offers system. We didn't. Offers weren't just a feature, they were the missing piece that would create price discovery and market feedback. I also took note of what other features were complementing the Offer feature.
+                            I studied OpenSea, Magic Eden, and OKX to see how they handled price discovery. All three used offers to make buyer demand visible, supported by activity feeds, notifications, and offer-management tools. That suggested the real opportunity was not simply adding negotiation, but creating a feedback loop around price.
                         </p>
 
-                        <!-- Competitive Analysis Visual Placeholder -->
+                        <!-- How Other Marketplaces Exposed Demand Visual Placeholder -->
                         <div class="my-12">
                             <div class="relative aspect-[16/10] overflow-hidden">
                                 <img 
@@ -250,7 +250,7 @@
                     <!-- User Journey -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            User Journey: Finding the Right Price
+                            Where Price Feedback Was Missing
                         </h3>
                         
                         <!-- Journey Flow Visual Placeholder -->
@@ -265,41 +265,41 @@
                         </div>
 
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            From Strategy to Execution
+                            Designing Around a Blockchain Constraint
                         </h3>
                         <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            Once I validated that offers were the right solution, I worked closely with our CFO and engineers to understand technical constraints. Enjin's blockchain requires manual reclaiming of funds for unaccepted offers, a limitation that would alter the user flow.
+                            Once offers became the direction, I worked with the CFO, PM, and engineers to map the full experience. One important constraint surfaced quickly: rejected or expired offers did not automatically return funds to the buyer.
                         </p>
                         <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            I wrote detailed specs outlining three core flows:
+                            That meant the experience needed to make three things especially clear:
                         </p>
                         <ol class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7; padding-left: 1.5rem;">
                             <li class="mb-2">
-                                <strong>Item Detail View</strong> – Displaying all offers on an NFT with accept/decline actions
+                                <strong>Market Context</strong> – Show buyers the balance, floor price, and best existing offer before they enter a price
                             </li>
                             <li class="mb-2">
-                                <strong>Offers &amp; Bids Hub</strong> – A dashboard in user profiles to manage all active offers
+                                <strong>Offer Management</strong> – Give buyers and sellers one place to track active, expiring, rejected, and reclaimable offers
                             </li>
                             <li class="mb-2">
-                                <strong>Offer Settings</strong> – Letting sellers set minimum offer thresholds to reduce noise
+                                <strong>Recovery States</strong> – Make reclaiming locked funds an explicit, understandable action
                             </li>
                         </ol>
                         
                     </div>
                     
-                    <!-- Technical Considerations -->
+                    <!-- Turn a Technical Limitation Into a Clear Action -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            Technical Considerations
+                            Turn a Technical Limitation Into a Clear Action
                         </h3>
                         <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
                             <div class="mb-6">
                                 <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Limitation</h4>
                                 <p class="text-gray-300 font-inter leading-relaxed mb-4" style="font-weight: 400;">
-                                    Early in the design process, I learned Enjin's blockchain requires buyers to manually reclaim unaccepted offers - funds don't automatically return.                                       </p>
+                                    Rejected or expired offers left funds locked until the buyer reclaimed them manually.                                       </p>
                                 <h4 class="text-white font-inter mb-3" style="font-weight: 600;">UX Solution</h4>
                                 <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
-                                    Rather than seeing this as a blocker, I worked with engineers to design a notification system that would turn this into a feature, creating a "Claim" CTA in the Offers & Bids hub.
+                                    I worked with engineering to surface those states through notifications and a clear "Claim" action in the Offers & Bids hub, so a blockchain limitation became an understandable next step instead of hidden system behavior.
                                 </p>
                             </div>
 
@@ -308,7 +308,7 @@
                                 <div class="relative aspect-[16/5] overflow-hidden">
                                     <img 
                                         src="/image/01_offer/visual7.png" 
-                                        alt="Re claim placed offers"
+                                        alt="Reclaim action for expired or rejected offers"
                                         class="w-full h-full object-contain"
                                     />
                                 </div>
@@ -331,13 +331,13 @@
 
                 <!-- Solution Content -->
                 <div class="space-y-12">
-                    <!-- The Solution -->
+                    <!-- Make Buyer Intent Visible -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            The Solution
+                            Make Buyer Intent Visible
                         </h3>
                         <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            We introduced a comprehensive offers system that would bridge the pricing gap between buyers and sellers, providing market signals and enabling price discovery.
+                            The final system let buyers make time-bound offers and gave sellers visible demand directly on the asset page. The goal was to help both sides make better pricing decisions, not just add another transaction type.
                         </p>
 
                         <!-- Solution Interface Visual Placeholder -->
@@ -386,10 +386,10 @@
                                     <div class="p-2 bg-gray-800 rounded-lg">
                                         <i data-lucide="eye" class="w-5 h-5 text-[#c4ff00]"></i>
                                     </div>
-                                    <h4 class="text-white font-inter" style="font-weight: 600;">Visible Market Intent</h4>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Visible Demand</h4>
                                 </div>
                                 <p class="text-gray-400 text-sm font-inter leading-relaxed">
-                                    All offers displayed prominently on NFT pages
+                                    Offers sorted on the asset page so sellers could see real buyer interest
                                 </p>
                             </div>
 
@@ -398,10 +398,10 @@
                                     <div class="p-2 bg-gray-800 rounded-lg">
                                         <i data-lucide="clock" class="w-5 h-5 text-[#c4ff00]"></i>
                                     </div>
-                                    <h4 class="text-white font-inter" style="font-weight: 600;">Time-bound Offers</h4>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Time-Bound Decisions</h4>
                                 </div>
                                 <p class="text-gray-400 text-sm font-inter leading-relaxed">
-                                    Expiration dates create urgency and clarity
+                                    Expiration made offer states and timing explicit for both sides
                                 </p>
                             </div>
 
@@ -410,10 +410,10 @@
                                     <div class="p-2 bg-gray-800 rounded-lg">
                                         <i data-lucide="bell" class="w-5 h-5 text-[#c4ff00]"></i>
                                     </div>
-                                    <h4 class="text-white font-inter" style="font-weight: 600;">Smart Notifications</h4>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">State Awareness</h4>
                                 </div>
                                 <p class="text-gray-400 text-sm font-inter leading-relaxed">
-                                    Alerts for new offers, expirations, and acceptance
+                                    Notifications surfaced offers that needed attention or funds that needed reclaiming
                                 </p>
                             </div>
 
@@ -422,10 +422,10 @@
                                     <div class="p-2 bg-gray-800 rounded-lg">
                                         <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-[#c4ff00]"></i>
                                     </div>
-                                    <h4 class="text-white font-inter" style="font-weight: 600;">One-click Acceptance</h4>
+                                    <h4 class="text-white font-inter" style="font-weight: 600;">Fast Acceptance</h4>
                                 </div>
                                 <p class="text-gray-400 text-sm font-inter leading-relaxed">
-                                    Streamlined flow for sellers to accept offers
+                                    Sellers could act on the strongest offer directly from the asset experience
                                 </p>
                             </div>
                         </div>
@@ -434,6 +434,17 @@
                     
                 </div>
         </section>
+
+
+                    <!-- Counter Offer Decision -->
+                    <div>
+                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
+                            Test the Disagreement Instead of Debating It
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            I initially recommended against counter-offers because I expected them to add complexity without enough value. A stakeholder disagreed, so instead of debating it indefinitely, we shipped the interaction as a low-cost experiment. Post-launch behavior showed users preferred making fresh offers, giving us evidence to simplify the experience.
+                        </p>
+                    </div>
 
         <!-- Impact & Results Section -->
         <section class="relative py-20 px-8 bg-gray-950/30 animate-on-scroll">
@@ -453,7 +464,7 @@
                             The Results
                         </h3>
                         <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            The results exceeded our expectations. While we anticipated increased offer activity, the broader impact on marketplace dynamics was remarkable.
+                            The feature performed well as a transaction tool, but the more interesting result was what happened to pricing behavior across the marketplace.
                         </p>
 
                         <!-- Key Metrics -->
@@ -489,20 +500,20 @@
                     </div>
 
 
-                    <!-- The Unexpected Win -->
+                    <!-- The Bigger Win Was Price Discovery -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            The Unexpected Win
+                            The Bigger Win Was Price Discovery
                         </h3>
                         <p class="text-gray-300 leading-relaxed font-inter" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            Beyond offer acceptance, the feature improved overall price discovery, leading to better listing prices and increased buyer confidence across the entire marketplace.
+                            Offers made buyer demand visible. Sellers could see what people were actually willing to pay, which helped narrow the gap between asking price and market demand.
                         </p>
                     </div>
 
-                    <!-- Key Learnings -->
+                    <!-- What I Learned -->
                     <div>
                         <h3 class="text-xl font-inter mb-6 text-[#c4ff00]" style="font-weight: 600;">
-                            Key Learnings
+                            What I Learned
                         </h3>
                         
                         <div class="space-y-6">
@@ -514,9 +525,9 @@
                                         <i data-lucide="network" class="w-5 h-5 text-green-400"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Network Effects</h4>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">A Business Problem Does Not Need to Start With a Feature</h4>
                                         <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
-                                            Increased activity from offers created positive momentum, encouraging more listings and buyer engagement.
+                                            The project started with a business goal, not a solution. Understanding why transactions were not happening led us to the feature.
                                         </p>
                                     </div>
                                 </div>
@@ -528,9 +539,9 @@
                                         <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-400"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Educating Sellers</h4>
+                                        <h4 class="text-white font-inter mb-2" style="font-weight: 600;">Visible Demand Can Teach Better Than Instructions</h4>
                                         <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
-                                            The offers not only enabled negotiations but also educated the entire sellers about realistic pricing.
+                                            We did not need to tell sellers what the right price was. Showing real buyer intent gave them the information to adjust on their own.
                                         </p>
                                     </div>
                                 </div>
