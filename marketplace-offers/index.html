@@ -182,17 +182,17 @@
 
                 <!-- Problem Content -->
                 <div class="space-y-12">
-                    <!-- Start With the Business Problem, Not a Feature -->
+                    <!-- Sellers and Buyers Were Too Far Apart on Price -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            Start With the Business Problem, Not a Feature
+                            Sellers and Buyers Were Too Far Apart on Price
                         </h3>
                         <div class="text-gray-300 leading-relaxed font-inter space-y-4" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
                             <p>
                                 The brief was intentionally broad: increase transaction volume on the marketplace. There was no feature attached to it, so I first needed to understand why people were not buying.
                             </p>
                             <p>
-                                Marketplace activity showed plenty of listings but relatively few sales. Sellers could set an asking price, but buyers had no way to communicate what they were actually willing to pay.
+                                Marketplace activity showed plenty of listings but relatively few sales. Sellers were often listing assets above what buyers were willing to pay, while buyers had no way to signal a lower price. That created a clear gap between listed prices and real market demand.
                             </p>
                             <p>
 
@@ -248,138 +248,28 @@
                     </div>
 
                     <!-- User Journey -->
-                    <div>
-                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            Where Sellers Needed Market Feedback
-                        </h3>
-                        
-                        <!-- Journey Flow Visual Placeholder -->
-                        <div class="my-12">
-                            <div class="relative aspect-[16/10] overflow-hidden">
-                                <img 
-                                    src="/image/01_offer/visual3.png" 
-                                    alt="Step-by-step journey flow diagram"
-                                    class="w-full h-full object-contain"
-                                />
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            A Technical Constraint Changed the UX
-                        </h3>
-                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            Once offers became the direction, I worked with the COO, PM, and engineers to map the full experience. One important constraint surfaced quickly: rejected or expired offers did not automatically return funds to the buyer.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            The system therefore had to make three things clear:
-                        </p>
-                        <ol class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7; padding-left: 1.5rem;">
-                            <li class="mb-2">
-                                <strong>Market Context</strong> – Show buyers the balance, floor price, and best existing offer before they enter a price
-                            </li>
-                            <li class="mb-2">
-                                <strong>Offer Management</strong> – Give buyers and sellers one place to track active, expiring, rejected, and reclaimable offers
-                            </li>
-                            <li class="mb-2">
-                                <strong>Recovery States</strong> – Make reclaiming locked funds an explicit, understandable action
-                            </li>
-                        </ol>
-                        
-                    </div>
-                    
-                    <!-- Make a Blockchain Limitation Understandable -->
+                    <!-- Technical Constraint -->
                     <div>
                         <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
                             Make a Blockchain Limitation Understandable
                         </h3>
-                        <div class="bg-gray-950/50 border border-gray-800 rounded-lg p-8">
-                            <div class="mb-6">
-                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">Limitation</h4>
-                                <p class="text-gray-300 font-inter leading-relaxed mb-4" style="font-weight: 400;">
-                                    Rejected or expired offers left funds locked until the buyer reclaimed them manually.                                       </p>
-                                <h4 class="text-white font-inter mb-3" style="font-weight: 600;">UX Solution</h4>
-                                <p class="text-gray-300 font-inter leading-relaxed" style="font-weight: 400;">
-                                    I surfaced reclaimable funds through notifications and a clear "Claim" action in the Offers & Bids hub so users always knew what needed attention.
-                                </p>
-                            </div>
-
-                            <!-- Notification mockup placeholder -->
-                            <div>
-                                <div class="relative aspect-[16/5] overflow-hidden">
-                                    <img 
-                                        src="/image/01_offer/visual7.png" 
-                                        alt="Reclaim action for expired or rejected offers"
-                                        class="w-full h-full object-contain"
-                                    />
-                                </div>
-                            </div>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-6" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            Rejected or expired offers did not automatically return funds to the buyer. Instead of leaving that behavior hidden, I surfaced reclaimable funds through clear status labels, notifications, and a visible Claim action in the Offers &amp; Bids hub.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
+                            That constraint shaped the system around three needs: market context before making an offer, one place to manage offer states, and an explicit recovery path when funds needed to be reclaimed.
+                        </p>
+                        <div class="relative aspect-[16/5] overflow-hidden">
+                            <img 
+                                src="/image/01_offer/visual7.png" 
+                                alt="Expired and rejected offers with clear Claim actions"
+                                class="w-full h-full object-contain"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Solution Design Section -->
-        <section class="relative py-20 px-8 animate-on-scroll">
-            <div class="max-w-4xl mx-auto">
-                <!-- Section Header -->
-                <div class="mb-12">
-                    <h2 class="text-3xl md:text-4xl font-jakarta mb-6" style="font-weight: 600;">
-                        Solution Design
-                    </h2>
-                </div>
-
-                <!-- Solution Content -->
-                <div class="space-y-12">
-                    <!-- Turn Offers Into Market Context -->
-                    <div>
-                        <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                            Turn Offers Into Market Context
-                        </h3>
-                        <p class="text-gray-300 leading-relaxed font-inter mb-12" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                            The final system made buyer intent visible across the marketplace while giving both buyers and sellers clear places to act on it.
-                        </p>
-
-                        <div class="mb-16">
-                            <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                                Make Buyer Demand Visible
-                            </h3>
-                            <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                                Offers live beside the listing price so sellers can compare asking price with what buyers are actually willing to pay.
-                            </p>
-                            <div class="relative aspect-[16/10] overflow-hidden">
-                                <img src="/image/01_offer/visual4.png" alt="NFT asset detail page showing current price and visible buyer offers" class="w-full h-full object-contain" />
-                            </div>
-                        </div>
-
-                        <div class="mb-16">
-                            <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                                Make Every Offer State Actionable
-                            </h3>
-                            <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                                A centralized Offers &amp; Bids hub lets users track placed and received activity, monitor expiration, and reclaim funds when an offer expires or is rejected.
-                            </p>
-                            <div class="relative aspect-[16/10] overflow-hidden">
-                                <img src="/image/01_offer/visual5.png" alt="Offers and Bids hub showing active, expiring, expired, and rejected states" class="w-full h-full object-contain" />
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                                Let Sellers Filter the Noise
-                            </h3>
-                            <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                                Sellers can set minimum offer thresholds by collection so they are only notified when an offer is worth their attention.
-                            </p>
-                            <div class="relative aspect-[16/10] overflow-hidden">
-                                <img src="/image/01_offer/visual6.png" alt="Offer settings showing minimum offer thresholds by collection" class="w-full h-full object-contain" />
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-        </section>
-
 
         <!-- Offer Dialog Visual Decision -->
         <section class="relative py-20 px-8 animate-on-scroll">
@@ -388,7 +278,7 @@
                     Put the Decision Context Next to the Decision
                 </h3>
                 <p class="text-gray-300 leading-relaxed font-inter mb-8" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                    Buyers needed three numbers before entering an offer: available balance, floor price, and the best existing offer. I grouped them above the input instead of scattering them across the dialog so users could compare the market context before deciding what to enter.
+                    Before entering an offer, buyers needed three numbers: their available balance, the floor price, and the best existing offer. I grouped those directly above the input so users could compare the market context before deciding what to enter.
                 </p>
                 <div class="my-12">
                     <div class="relative aspect-[16/10] overflow-hidden">
@@ -402,10 +292,10 @@
         <section class="relative py-20 px-8 animate-on-scroll">
             <div class="max-w-4xl mx-auto">
                 <h3 class="text-xl font-inter mb-4 text-[#c4ff00]" style="font-weight: 600;">
-                    Use Shipping as a Way to Resolve Disagreement
+                    When Opinions Differ, Test the Cheapest Version
                 </h3>
                 <p class="text-gray-300 leading-relaxed font-inter" style="font-weight: 400; font-size: 18px; line-height: 1.7;">
-                    I initially argued against counter-offers because they added another negotiation state. A stakeholder disagreed, so we shipped the low-cost interaction and watched how people used it. Post-launch behavior showed users preferred placing fresh offers, giving the team evidence to simplify the experience.
+                    I initially argued against counter-offers because they added another negotiation state. A stakeholder disagreed, so we shipped the low-cost version and watched how people used it. Post-launch behavior showed users preferred placing fresh offers, which gave the team evidence to simplify the experience.
                 </p>
             </div>
         </section>
