@@ -606,7 +606,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Rock Scissor Paper Duel -->
+                    <!-- Homeworlds Arena -->
                     <div class="project-card relative border border-gray-800 rounded-lg bg-black/50 overflow-hidden group grid-bg-subtle">
                         <div class="absolute inset-0 bg-gradient-to-br from-[#c4ff00]/5 via-transparent to-[#c4ff00]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
@@ -614,18 +614,18 @@
                             <!-- Project Header -->
                             <div class="flex items-center gap-3 mb-6">
                                 <div class="p-2 bg-gray-800 rounded-lg">
-                                    <i data-lucide="scissors" class="w-5 h-5 text-[#c4ff00]"></i>
+                                    <i data-lucide="orbit" class="w-5 h-5 text-[#c4ff00]"></i>
                                 </div>
                                 <div>
                                     <h3 class="project-title text-white font-medium mb-1 transition-colors duration-300">
-                                        ROCK SCISSOR PAPER DUEL
+                                        HOMEWORLDS ARENA
                                     </h3>
                                     <div class="flex items-center gap-4 text-xs text-gray-400">
-                                        <span>Desktop</span>
+                                        <span>Web Game</span>
                                         <span>•</span>
-                                        <span class="text-yellow-400">Work in Progress</span>
+                                        <span class="text-green-400">Live</span>
                                         <span>•</span>
-                                        <span>2025</span>
+                                        <span>2026</span>
                                     </div>
                                 </div>
                             </div>
@@ -633,13 +633,14 @@
                             <!-- Game Preview -->
                             <div class="relative mb-6 aspect-video bg-gray-900 rounded-lg overflow-hidden video-container">
                                 <video 
-                                    class="w-full h-full object-cover" 
+                                    class="w-full h-full object-contain"
+                                    playsinline
                                     muted 
                                     loop 
                                     preload="metadata"
-                                    poster="image/boosterPack.png"
+                                    poster="image/homeworlds-arena-poster.jpg"
                                 >
-                                    <source src="image/boosterPack.mp4" type="video/mp4">
+                                    <source src="image/homeworlds-arena.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 
@@ -673,17 +674,27 @@
 
                             <!-- Description -->
                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                                A gacha style card collection system where players can purchase booster packs to randomly unlock cards. Built from scratch with AI assistance.
+                                An online adaptation of Homeworlds, the strategy board game played with Looney Pyramids. Command fleets, compete with other players, and review matches—all in the browser.
                             </p>
 
                             <!-- Features -->
-                            <div>
+                            <div class="mb-6">
                                 <h4 class="text-gray-400 text-xs tracking-wider mb-3">KEY FEATURES</h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Deck Building</span>
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Multiplayer</span>
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Gacha Game</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Online Multiplayer</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Ranked Play</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700 ">Match Review</span>
                                     
+                                </div>
+                            </div>
+
+                            <!-- Action Button -->
+                            <div class="flex gap-3">
+                                <div class="flex-1 relative rounded-lg hover-glow">
+                                    <a href="https://hwarena.xyz/" target="_blank" rel="noopener noreferrer" class="w-full bg-[#c4ff00] text-black hover:bg-[#b8f000] text-sm py-2 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 relative z-10">
+                                        <i data-lucide="play" class="w-4 h-4"></i>
+                                        Play Homeworlds Arena
+                                    </a>
                                 </div>
                             </div>
                         </div>
